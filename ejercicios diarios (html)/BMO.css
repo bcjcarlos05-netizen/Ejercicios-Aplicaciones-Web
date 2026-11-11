@@ -1,17 +1,22 @@
 * {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
     width: auto;
 }
+html {
+    font-size: 62.5%;
+}
 body {
     background-color: #1d9fa3;
+    margin: 0 auto;
 }
 header {
     display: flex;
     flex-direction: column;
     background-color: aqua;
     justify-content: center;
+    font-size: 1.6rem;
 }
 
 header h1 {
@@ -51,8 +56,8 @@ text-align: center;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* P8: Sombra exterior */
 }
 .BMO3 {
-    display: grid;
-    grid-template-columns: 25% 30% 25%;
+    display: flex;
+    justify-content: space-evenly;
     gap: 10px;
     width: 68%;
     background-color: #1d4147;
@@ -95,4 +100,18 @@ text-align: center;
 
 .BMO5 a {
     color: rgb(247, 7, 7);
+}
+
+h2, h3 {
+    margin: 1rem 0;
+    text-align: center;
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.7rem;
+}
+
+li {
+    font-size: 1.6rem;
 }
