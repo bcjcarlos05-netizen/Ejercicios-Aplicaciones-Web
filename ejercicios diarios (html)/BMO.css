@@ -3,14 +3,25 @@
     padding: 0;
     box-sizing: border-box;
     width: auto;
+    
 }
+
 html {
     font-size: 62.5%;
 }
+body{ cursor: url('/cursor.cur'), auto;}
+
+h1{ cursor: help;  }
+
 body {
     background-color: #1d9fa3;
     margin: 0 auto;
+    background-image: linear-gradient(to left,green,white,black);
+    background-image: radial-gradient(orange,white);
+    background: linear-gradient(to right,red 20%,orange 20% 40%, yellow 40% 60%,green 60% 80%,blue 80% );
+
 }
+
 header {
     display: flex;
     flex-direction: column;
@@ -23,22 +34,25 @@ header h1 {
     text-align: center;
     padding: 20px;
 }
+
 .menu-navegacion {
     display: flex;
- background-color: black;
- justify-content: center;
+    background-color: black;
+    justify-content: center;
 }
 
 .menu-navegacion a {
- color: white;
-text-decoration: none;
-transition: background-color 0.3s; /* Transición animada */
-padding: 15px 20px;
-text-align: center;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    /* Transición animada */
+    padding: 15px 20px;
+    text-align: center;
 }
 
 .menu-navegacion a:hover {
-    background-color: #2e7d32; /* P8: Cambio de color al pasar el ratón */
+    background-color: #2e7d32;
+    /* P8: Cambio de color al pasar el ratón */
 }
 
 .BMO1 {
@@ -46,21 +60,26 @@ text-align: center;
     background-color: #2f7692;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* P8: Sombra exterior */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+    /* P8: Sombra exterior */
     .imagen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
+
 .BMO2 {
     width: 68%;
     background-color: #706060;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* P8: Sombra exterior */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    /* P8: Sombra exterior */
 }
+
 .BMO3 {
     display: flex;
     justify-content: space-evenly;
@@ -70,10 +89,11 @@ text-align: center;
     background-color: #1d4147;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* P8: Sombra exterior */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    /* P8: Sombra exterior */
 
     img {
-       max-width:100%;
+        max-width: 100%;
         transition: all ease 2s;
     }
 
@@ -87,7 +107,8 @@ text-align: center;
     background-color: #437ea0;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* P8: Sombra exterior */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    /* P8: Sombra exterior */
 }
 
 .BMO5 {
@@ -98,18 +119,19 @@ text-align: center;
     background-color: #1d4147;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* P8: Sombra exterior */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    /* P8: Sombra exterior */
 
     iframe {
-    width: 50%;
-    height: auto;
-    display: block;
+        width: 50%;
+        height: auto;
+        display: block;
     }
 
     video {
-    width: 50%;
-    height: auto;
-    display: block;
+        width: 50%;
+        height: auto;
+        display: block;
     }
 }
 
@@ -118,7 +140,8 @@ text-align: center;
     background-color: #437ea0;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* P8: Sombra exterior */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    /* P8: Sombra exterior */
 }
 
 .BMO7 {
@@ -131,22 +154,77 @@ text-align: center;
     padding: 15px;
     border-radius: 10px;
     box-sizing: border-box;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* P8: Sombra exterior */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    /* P8: Sombra exterior */
 
-iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    display: block;
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        display: block;
+    }
 }
+
+.BMO8{
+    width: 68%;
+    background-color: #437ea0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(to right, transparent 50%, #037bc0 50%, #037bc0 100%) ,url(/Fotos/ARMERIA.JPG.png);
+    background-size: 100%, 200rem;
+    /* el primer tamaño es para el gradiente y el 2º es para la imagen */
+    padding: 8rem 0;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 3px solid black;
+
+    h2 {
+        grid-column: 2/3;
+        text-align: center;
+        color: white;
+    }
+    
 }
+
+.BMO9 { 
+    display: flex; 
+    height: 600px; 
+    max-width: 1000px;
+    margin: 0 auto;
+ } 
+.BMO9 img {
+     width: 0; 
+     flex-grow: 1; 
+     object-fit: cover; 
+     opacity: 0.8;
+      transition: all 4s ease;
+     }
+.BMO9 img:hover { 
+    width: 300px; 
+    opacity: 1; 
+    filter: contrast(120%);
+ } 
+.BMO9 img:first-child {
+     border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+     } 
+.BMO9 img:last-child { 
+    border-top-right-radius: 20px;
+     border-bottom-right-radius: 20px;
+ }
 
 .BMO11 {
     width: 68%;
     background-color: #c5c7c3;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* P8: Sombra exterior */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+    /* P8: Sombra exterior */
     p {
         border: 3px solid rgb(136, 105, 25);
         padding: 20px;
@@ -160,7 +238,8 @@ iframe {
     color: rgb(247, 7, 7);
 }
 
-h2, h3 {
+h2,
+h3 {
     margin: 1rem 0;
     text-align: center;
     font-size: 4rem;
@@ -178,4 +257,25 @@ audio {
     display: block;
     width: 80%;
     height: 40px;
+}
+
+@font-face {
+    /* Fuentes de texto */
+    font-family: "1";
+    src: url(../fuentes/letra1.otf);
+}
+
+h2 {
+    font-family: "1";
+    font-size: 5rem;
+    text-shadow: 3px 3px 3px yellow;
+    /* Sombra*/
+}
+
+
+h1 {
+    font-family: "Ms Madi", cursive;
+    font-size: 4rem;
+    font-style: normal;
+    text-shadow: 3px 3px 3px rgb(36, 36, 21);
 }
