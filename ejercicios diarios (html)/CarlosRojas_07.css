@@ -1,0 +1,97 @@
+/*
+
+tipos de listas
+
+*/
+
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+h1{
+    text-align: center;
+
+}
+
+.desordenada {
+padding: 20px;
+background-color: rgb(155, 155, 117);
+border-radius: 70px;
+margin: 20px;
+}
+ul {
+    margin-top: 20px;
+    line-height: 40px;
+}
+
+.Procesador, .Placa, .Caja, .Disco, .Refrigeración, .RAM, .Grafica, .Sistema, .USB, .HDMI{
+    list-style-type: none;
+   background-size: 25px;
+   background-repeat: no-repeat;
+   background-position: left center;
+	   background-position-x: -5px;
+   padding: 0px 0px 0px 25px;
+
+}
+
+.Procesador {
+    background-image: url(./ARMERIA.JPG.png);
+}
+
+.Placa {
+    background-image: url(./ARMERIA.JPG.png);
+}
+
+.Caja {
+    background-image: url(./ARMERIA.JPG.png);
+}
+
+.Disco {
+    background-image: url(./ARMERIA.JPG.png);
+}
+
+.Refrigeración {
+    background-image: url(./ARMERIA.JPG.png);
+}
+
+.RAM {
+    background-image: url(./ARMERIA.JPG.png);
+}
+
+.Grafica {
+    background-image: url(./ARMERIA.JPG.png);
+}
+
+.Sistema {
+    background-image: url(./ARMERIA.JPG.png);
+}
+
+.USB {
+    background-image: url(./ARMERIA.JPG.png);
+}
+
+.HDMI {
+    background-image: url(./ARMERIA.JPG.png);
+}
+
+.ordenada {
+    padding: 20px;
+    background-color: rgb(121, 121, 35);
+border-radius: 70px;
+margin: 20px;
+}
+
+ol ol {
+    list-style-type: armenian;
+    font-style: italic;
+    font-size: small;
+}
+
+.definicion {
+padding: 20px;
+background-color: beige;
+border-radius: 70px;
+margin: 20px;
+
+}

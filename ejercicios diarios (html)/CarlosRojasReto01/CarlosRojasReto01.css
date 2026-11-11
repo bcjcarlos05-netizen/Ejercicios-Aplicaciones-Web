@@ -1,0 +1,128 @@
+/*
+Carlos Rojas Guevara
+Reto 1
+Octubre 2026
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: auto;
+}
+ body {
+    background-color: aquamarine;
+ }
+
+header {
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+    justify-content: center;
+}
+
+header h1 {
+    text-align: center;
+    padding: 20px;
+}
+
+header h4 {
+    text-align: center;
+    padding: 10px;
+    font-size: large;
+}
+.menu-navegacion {
+    display: flex;
+ background-color: black;
+ justify-content: center;
+}
+
+.menu-navegacion a {
+ color: white;
+text-decoration: none;
+transition: background-color 0.3s;
+padding: 15px 20px;
+text-align: center;
+}
+
+.menu-navegacion a:hover {
+    background-color: #2e7d32;
+}
+
+.Presentacion {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    display: grid;
+    gap: 10px;
+    background-color: #f8f8f8;
+    img {
+        width: 68%;
+        transition: all ease 2s;
+        align-items: center;
+    }
+
+    img:hover {
+        transform: scale(1.1) rotate(2deg) translate(3px, 4px);
+    }
+
+
+}
+
+.Tres_Lugares {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    display: grid;
+    gap: 10px;
+    background-color: #937a7a;
+ }
+
+
+
+
+.Imagenes{
+    display: grid;
+    gap: 10px;
+    width: 100%;
+    background-color: #1d4147;
+    display: grid;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+ img {
+        width: 68%;
+        transition: all ease 2s;
+        align-items: center;
+    }
+
+    img:hover {
+        transform: scale(1.1) rotate(2deg) translate(3px, 4px);
+    }
+
+    }
+
+    footer {
+    p {
+        border: 3px solid rgb(136, 105, 25);
+        padding: 20px;
+        border-radius: 10px;
+        background-color: rgb(214, 179, 133);
+        color: rgb(90, 71, 71);
+    }
+
+}
+    .Cosas_Que_Hacer {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    display: grid;
+    gap: 10px;
+    background-color: #937a7a;
+ }
+
+

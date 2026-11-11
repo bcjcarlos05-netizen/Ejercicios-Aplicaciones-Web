@@ -1,0 +1,88 @@
+<!DOCTYPE html> <!-- P2: Declaración HTML5 -->
+<html lang="es">
+<head>
+  <meta charset="UTF-8"> <!-- P3: Codificación de caracteres latinos -->
+  <title>Proyecto Final Integrado - Puntos 1 al 11</title>
+
+  <link rel="icon" href="ARMERIA.JPG.png" type="image/png"> <!-- P10: Favicón -->
+  <link rel="stylesheet" type="text/css" href="j.css"> <!-- P5: Hoja CSS externa -->
+</head>
+<body>
+
+  <header> <!-- P11: Cabecera semántica -->
+    <h1>Desarrollo Web con <abbr title="HyperText Markup Language 5">HTML5</abbr> y CSS3</h1> <!-- P2, P3: Título y Abreviatura -->
+    
+    <nav class="menu-navegacion"> <!-- P8, P11: Menú semántico con Flexbox -->
+      <a href="#inicio">Inicio</a> <!-- P6: Anclas internas -->
+      <a href="#temario">Temario</a>
+      <a href="#galeria">Galería</a>
+      <a href="#glosario">Glosario</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main id="inicio" class="contenedor-principal"> <!-- P11: Contenedor semántico principal -->
+
+    <section class="seccion-principal"> <!-- P11: Sección temática principal (Flotada a la izq) -->
+      <article> <!-- P11: Artículo independiente -->
+        <h2>Bienvenido a mi sitio Web</h2>
+        <img src="ARMERIA.JPG.png" alt="Banner" class="imagen-banner"> <!-- P6: Imagen adaptable -->
+        <p class="parrafo-destacado">
+          Proyecto progresivo aprendiendo <strong>HTML5</strong> y <em>CSS3</em>. <!-- P3: Negrita y Cursiva -->
+        </p>
+      </article>
+
+      <article id="temario" class="bloque-listas">
+        <h3>Módulos del Curso</h3>
+        <ul class="lista-custom"> <!-- P9: Lista desordenada con viñetas de icono -->
+          <li>Estructura HTML5 y Metadatos</li>
+          <li>Estilos CSS3 y Modelo de Cajas</li>
+          <li>Menús Flexbox y Layouts Grid</li>
+        </ul>
+
+        <h3>Pasos de Aprendizaje</h3>
+        <ol class="lista-ordenada"> <!-- P9: Lista ordenada alfabética -->
+          <li>Instalación de herramientas</li>
+          <li>Creación de hipervínculos</li>
+          <li>Maquetación semántica</li>
+        </ol>
+      </article>
+    </section>
+
+    <aside class="barra-lateral"> <!-- P11: Barra lateral semántica (Flotada a la der) -->
+      <h3>Información Adicional</h3>
+      <p>Aprende a maquetar sitios web adaptables.</p>
+      <hr/> <!-- P2: Línea divisoria -->
+
+      <div id="glosario">
+        <h4>Glosario</h4>
+        <dl> <!-- P9: Lista de definición -->
+          <dt>HTML5</dt><dd>Etiquetas semánticas.</dd> <!-- P9: Término y definición -->
+          <dt>CSS3</dt><dd>Hojas de estilo visuales.</dd>
+        </dl>
+      </div>
+    </aside>
+
+  </main>
+
+  <div style="clear: both;"></div> <!-- P7: Limpieza de flotados de las columnas -->
+
+  <section id="galeria" class="seccion-galeria">
+    <h2>Galería de Proyectos (CSS Grid)</h2>
+    <div class="grid-galeria"> <!-- P10: Rejilla CSS Grid -->
+      <img src="ARMERIA.JPG.png" alt="P1">
+      <img src="ARMERIA.JPG.png" alt="P2">
+      <img src="ARMERIA.JPG.png" alt="P3">
+    </div>
+  </section>
+
+  <footer id="contacto"> <!-- P11: Pie de página semántico -->
+    <p>
+      Escríbenos a: <a href="mailto:frmoisesfr@gmail.com?subject=Consulta">frmoisesfr@gmail.com</a> &nbsp;|&nbsp; <!-- P6: Mailto y espacio -->
+      Teléfono: <a href="tel:+34950451905">+34 950 451 905</a> <!-- P6: Enlace telefónico -->
+    </p>
+    <p><small>Copyright &copy; 2026 - Todos los derechos reservados.</small></p> <!-- P3: Texto pequeño y entidad © -->
+  </footer>
+
+</body>
+</html>

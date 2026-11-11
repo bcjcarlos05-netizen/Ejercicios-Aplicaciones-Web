@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Reconocimiento Facial - Webcam</title>
+<script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api/dist/face-api.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0e1a; color: #e2e8f0; font-family: Arial, sans-serif;
+         text-align: center; padding: 1rem; }
+  h1 { color: #00d4ff; margin-bottom: 0.3rem; }
+  #estado { color: #94a3b8; margin-bottom: 1rem; }
+  .contenedor { position: relative; display: inline-block; }
+  video { border-radius: 12px; max-width: 100%; }
+  canvas { position: absolute; top: 0; left: 0; }
+</style>
+</head>
+<body>
+  <h1>Carlos Rojas Guevara</h1>
+  <p id="estado">Cargando modelos de IA...</p>
+  <div class="contenedor">
+    <video id="video" autoplay muted playsinline></video>
+    <canvas id="canvas"></canvas>
+  </div>
+
+<script>
+// ═══ ELEMENTOS HTML ═══
+const video = document.getElementById("video");
+const canvas = document.getElementById("canvas");
+const estado = document.getElementById("estado");
+
+// ═══ CONFIGURACION ═══
+const URL_MODELOS = "https://cdn.jsdelivr.net/npm/@vladmandic/face-api/model/";
+const INTERVALO = 200;  // Milisegúndos entre cada analisis
+
+// ═══ FUNCION PRINCIPAL ═══
+async function iniciar() {
+    // Paso 1: Cargar modelos de IA desde internet
+    estado.textContent = "Descargando modelos de IA (primera vez tarda mas)...";
+    await faceapi.nets.ssdMobilenetv1.loadFromUri(URL_MODELOS);
+    await faceapi.nets.faceLandmark68Net.loadFromUri(URL_MODELOS);
+    await faceapi.nets.faceExpressionNet.loadFromUri(URL_MODELOS);
+    await faceapi.nets.ageGenderNet.loadFromUri(URL_MODELOS);
+    estado.textContent = "Modelos cargados. Iniciando webcam...";
+
+    // Paso 2: Encender la webcam
+    const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+    video.srcObject = stream;
+
+    // Paso 3: Cuando la webcam este lista, empezar a detectar
+    video.addEventListener("playing", () => {
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        estado.textContent = "Webcam activa - detectando caras...";
+        setInterval(detectar, INTERVALO);
+    });
+}
+
+// ═══ DETECTAR CARAS ═══
+async function detectar() {
+    // Pedir a face-api.js que detecte todas las caras
+    const detecciónes = await faceapi
+        .detectAllFaces(video)
+        .withFaceLandmarks()
+        .withFaceExpressions()
+        .withAgeAndGender();
+
+    // Limpiar lo dibujado antes
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Ajustar coordenadas al tamaño del video
+    const resultados = faceapi.resizeResults(detecciónes, {
+        width: canvas.width, height: canvas.height
+    });
+
+    // Dibujar rectangulo alrededor de cada cara
+    faceapi.draw.drawDetections(canvas, resultados);
+
+    // Dibujar etiqueta con emocion, edad y genero
+    for (const cara of resultados) {
+        const { x, y } = cara.detection.box;
+        const emocion = cara.expressions.asSortedArray()[0].expression;
+        const edad = Math.round(cara.age);
+        const genero = cara.gender;
+
+        ctx.fillStyle = "#ff0000";
+        ctx.font = "bold 24px Arial";
+        ctx.fillText(`${emocion}, ${edad} year, ${genero}`, x, y - 8);
+    }
+
+    estado.textContent = "Caras detectadas: " + detecciónes.length;
+}
+
+// ═══ INICIAR ═══
+iniciar().catch(err => {
+    estado.textContent = "Error: " + err.message;
+});
+</script>
+</body>
+</html>

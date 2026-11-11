@@ -1,0 +1,63 @@
+/*
+Galería CSS
+Carlos Rojas Guevara Octubre 2026
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header,
+footer {
+    background-color: darkgoldenrod;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+
+}
+
+main {
+    width: 80%;
+    margin: 25px auto 100px auto;
+
+    h2 {
+        text-align: center;
+        margin-top: 100px;
+    }
+}
+
+.info {
+    display: flex;
+}
+
+.sobre {
+    p {
+        border: 3px solid rgb(136, 105, 25);
+        padding: 10px;
+        border-radius: 10px;
+        background-color: antiquewhite;
+    }
+
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    gap: 10px;
+
+    img {
+        width: 100%;
+        transition: all ease 2s;
+    }
+
+    img:hover {
+        transform: scale(1.1) rotate(6deg) translate(5px, 6px);
+    }
+}

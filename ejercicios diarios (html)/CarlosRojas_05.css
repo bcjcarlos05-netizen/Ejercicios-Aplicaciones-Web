@@ -1,0 +1,60 @@
+
+*{
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    margin: auto;
+    font-family: Arial, sans-serif;
+}
+
+h1{
+    text-align: center;
+    padding: 20px;
+}
+
+.linea-negra{
+    background-color: #555555;
+    color: black;
+    padding-left: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border: black 2px solid;
+}
+
+.contenedor{
+    display: flex;
+    padding: 20px 0;
+}
+
+.bola_azul, .bola_amarilla, .bola_roja{
+    border-radius: 50%;
+    text-align: center;
+    padding: 85px;
+}
+
+.bola_azul{
+    background-color: blue;
+    color: black;
+}
+
+.bola_amarilla{
+    background-color: #FFF176;
+    color: black;
+}
+
+.bola_roja{
+    background-color: red;
+    color: black;
+}
+
+.linea-verde{
+    background-color: #00FF7F;
+    color: black;
+    padding-left: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border: black 2px solid;
+    clear: both;
+}

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Control de Asistencia</title>
+<script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api/dist/face-api.js"></script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0a0e1a; color:#e2e8f0; font-family:Arial,sans-serif; padding:1.5rem; }
+  h1 { color:#00d4ff; text-align:center; margin-bottom:.3rem; }
+  #estado { text-align:center; color:#94a3b8; margin-bottom:1rem; }
+  .layout { display:flex; gap:1.5rem; max-width:1100px; margin:0 auto; flex-wrap:wrap; }
+  .col-video { flex:1; min-width:300px; }
+  .col-panel { flex:0 0 320px; }
+  .cont-video { position:relative; width:100%; }
+  video { border-radius:12px; width:100%; }
+  canvas { position:absolute; top:0; left:0; width:100%; height:100%; }
+  .panel { background:#111827; border:1px solid #1e293b; border-radius:12px;
+           padding:1.2rem; margin-bottom:1rem; }
+  .panel h3 { color:#00d4ff; margin-bottom:.8rem; font-size:1rem; }
+  input[type=text] { width:100%; padding:.5rem; border-radius:8px; border:1px solid #334155;
+                     background:#0a0e1a; color:#e2e8f0; font-size:.95rem; margin-bottom:.5rem; }
+  button { padding:.5rem 1rem; border-radius:8px; border:none; cursor:pointer;
+           font-size:.9rem; font-weight:600; }
+  .btn-reg { background:#10b981; color:white; width:100%; }
+  .btn-exp { background:#0284c7; color:white; }
+  .btn-del { background:#dc2626; color:white; }
+  .persona { padding:.4rem 0; border-bottom:1px solid #1e293b; font-size:.9rem;
+             display:flex; justify-content:space-between; }
+  .persona .del { color:#ef4444; cursor:pointer; font-size:.8rem; }
+  table { width:100%; border-collapse:collapse; margin-top:.5rem; font-size:.9rem; }
+  th { text-align:left; padding:.5rem; color:#94a3b8; border-bottom:1px solid #1e293b; }
+  td { padding:.5rem; border-bottom:1px solid #1e293b; }
+  .botones { display:flex; gap:.5rem; margin-top:.8rem; }
+  .nombre-det { text-align:center; font-size:1.3rem; font-weight:bold; margin-top:.5rem; min-height:2rem; }
+  .nombre-ok { color:#10b981; }
+  .nombre-no { color:#ef4444; }
+</style>
+</head>
+<body>
+<h1>Control de Asistencia</h1>
+<p id="estado">Cargando modelos de IA...</p>
+
+<div class="layout">
+  <div class="col-video">
+    <div class="cont-video">
+      <video id="video" autoplay muted playsinline></video>
+      <canvas id="canvas"></canvas>
+    </div>
+    <div id="nombreDet" class="nombre-det"></div>
+  </div>
+  <div class="col-panel">
+    <div class="panel">
+      <h3>Registrar persona</h3>
+      <input type="text" id="inputNombre" placeholder="Nombre del alumno/a...">
+      <button class="btn-reg" onclick="registrar()">Registrar cara</button>
+    </div>
+    <div class="panel">
+      <h3>Personas (<span id="numP">0</span>)</h3>
+      <div id="listaP"></div>
+    </div>
+    <div class="panel">
+      <h3>Asistencia de hoy</h3>
+      <table><thead><tr><th>Nombre</th><th>Hora</th></tr></thead>
+        <tbody id="tablaA"></tbody></table>
+      <div class="botones">
+        <button class="btn-exp" onclick="exportarCSV()">Exportar CSV</button>
+        <button class="btn-del" onclick="borrarTodo()">Borrar todo</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══ ELEMENTOS ═══
+const video = document.getElementById("video");
+const canvas = document.getElementById("canvas");
+const estado = document.getElementById("estado");
+const nombreDet = document.getElementById("nombreDet");
+
+// ═══ CONFIGURACION ═══
+const URL_MODELOS = "https://cdn.jsdelivr.net/npm/@vladmandic/face-api/model/";
+const UMBRAL = 0.6;      // Distancia maxima para coincidencia
+const INTERVALO = 2000;  // Milisegúndos entre cada identificación
+
+// ═══ INICIAR ═══
+async function iniciar() {
+    estado.textContent = "Descargando modelos de IA...";
+    await faceapi.nets.ssdMobilenetv1.loadFromUri(URL_MODELOS);
+    await faceapi.nets.faceLandmark68Net.loadFromUri(URL_MODELOS);
+    await faceapi.nets.faceRecognitionNet.loadFromUri(URL_MODELOS);
+    await faceapi.nets.faceExpressionNet.loadFromUri(URL_MODELOS);
+
+    const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+    video.srcObject = stream;
+
+    video.addEventListener("playing", () => {
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        actualizarLista();
+        actualizarTabla();
+        estado.textContent = "Listo. Registra personas o espera la detección automatica.";
+        setInterval(identificar, INTERVALO);
+    });
+}
+
+// ═══ REGISTRAR PERSONA ═══
+async function registrar() {
+    const nombre = document.getElementById("inputNombre").value.trim();
+    if (!nombre) { alert("Escribe un nombre primero."); return; }
+
+    estado.textContent = "Analizando cara...";
+    const det = await faceapi.detectSingleFace(video)
+        .withFaceLandmarks().withFaceDescriptor();
+
+    if (!det) {
+        estado.textContent = "No se detecto ninguna cara. Mirate a la camara.";
+        return;
+    }
+
+    // Guardar nombre + 128 numeros del descriptor
+    const personas = cargarPersonas();
+    personas.push({ nombre, descriptor: Array.from(det.descriptor) });
+    localStorage.setItem("personas", JSON.stringify(personas));
+
+    document.getElementById("inputNombre").value = "";
+    actualizarLista();
+    estado.textContent = nombre + " registrado/a correctamente.";
+}
+
+// ═══ IDENTIFICAR EN TIEMPO REAL ═══
+async function identificar() {
+    const personas = cargarPersonas();
+    if (personas.length === 0) return;
+
+    const det = await faceapi.detectSingleFace(video)
+        .withFaceLandmarks().withFaceDescriptor().withFaceExpressions();
+
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    if (!det) { nombreDet.textContent = ""; return; }
+
+    // Dibujar rectangulo
+    const res = faceapi.resizeResults(det, {
+        width: canvas.width, height: canvas.height
+    });
+    faceapi.draw.drawDetections(canvas, res);
+
+    // Comparar con todas las personas guardadas
+    let mejorNombre = "Desconocido";
+    let mejorDist = Infinity;
+
+    for (const p of personas) {
+        const guardado = new Float32Array(p.descriptor);
+        const dist = faceapi.euclideanDistance(det.descriptor, guardado);
+        if (dist < mejorDist) { mejorDist = dist; mejorNombre = p.nombre; }
+    }
+
+    // ¿Es coincidencia?
+    if (mejorDist < UMBRAL) {
+        nombreDet.textContent = mejorNombre;
+        nombreDet.className = "nombre-det nombre-ok";
+        registrarAsistencia(mejorNombre);
+        const { x, y } = res.detection.box;
+        const emocion = res.expressions.asSortedArray()[0].expression;
+        ctx.fillStyle = "#00ff00"; ctx.font = "bold 18px Arial";
+        ctx.fillText(mejorNombre + " - " + emocion, x, y - 8);
+    } else {
+        nombreDet.textContent = "Desconocido";
+        nombreDet.className = "nombre-det nombre-no";
+    }
+}
+
+// ═══ REGISTRAR ASISTENCIA (sin duplicados del mismo dia) ═══
+function registrarAsistencia(nombre) {
+    const hoy = new Date().toLocaleDateString("es-ES");
+    const hora = new Date().toLocaleTimeString("es-ES");
+    const lista = cargarAsistencias();
+    if (lista.some(a => a.nombre === nombre && a.fecha === hoy)) return;
+    lista.push({ nombre, fecha: hoy, hora });
+    localStorage.setItem("asistencia", JSON.stringify(lista));
+    actualizarTabla();
+    estado.textContent = nombre + " - asistencia registrada a las " + hora;
+}
+
+// ═══ DATOS ═══
+function cargarPersonas()    { return JSON.parse(localStorage.getItem("personas")    || "[]"); }
+function cargarAsistencias() { return JSON.parse(localStorage.getItem("asistencia") || "[]"); }
+
+function actualizarLista() {
+    const personas = cargarPersonas();
+    document.getElementById("numP").textContent = personas.length;
+    document.getElementById("listaP").innerHTML = personas.map((p, i) =>
+        `<div class="persona"><span>${p.nombre}</span>
+         <span class="del" onclick="eliminar(${i})">eliminar</span></div>`
+    ).join("");
+}
+
+function eliminar(i) {
+    const p = cargarPersonas(); p.splice(i, 1);
+    localStorage.setItem("personas", JSON.stringify(p)); actualizarLista();
+}
+
+function actualizarTabla() {
+    const hoy = new Date().toLocaleDateString("es-ES");
+    const lista = cargarAsistencias().filter(a => a.fecha === hoy);
+    document.getElementById("tablaA").innerHTML = lista.map(a =>
+        `<tr><td>${a.nombre}</td><td>${a.hora}</td></tr>`
+    ).join("");
+}
+
+// ═══ EXPORTAR CSV ═══
+function exportarCSV() {
+    const lista = cargarAsistencias();
+    if (lista.length === 0) { alert("No hay asistencias."); return; }
+    let csv = "Nombre,Fecha,Hora\n";
+    for (const a of lista) csv += `${a.nombre},${a.fecha},${a.hora}\n`;
+    const blob = new Blob([csv], { type: "text/csv" });
+    const enlace = document.createElement("a");
+    enlace.href = URL.createObjectURL(blob);
+    enlace.download = "asistencia.csv";
+    enlace.click();
+}
+
+// ═══ BORRAR TODO ═══
+function borrarTodo() {
+    if (confirm("¿Borrar todas las personas y asistencias?")) {
+        localStorage.removeItem("personas");
+        localStorage.removeItem("asistencia");
+        actualizarLista(); actualizarTabla();
+        estado.textContent = "Datos borrados.";
+    }
+}
+
+// ═══ ARRANCAR ═══
+iniciar().catch(err => { estado.textContent = "Error: " + err.message; });
+</script>
+</body>
+</html>

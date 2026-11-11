@@ -1,0 +1,65 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: rgb(97, 90, 81);
+}
+
+h1{
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+    text-shadow: black 1px 1px 2px;
+}
+.menuFlex{
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 20px auto;
+    overflow: hidden;
+    border-top: 2px black;
+}
+.menuFlex a:first-child, .menuGrid a:first-child{
+    border-bottom-left-radius: 20px;
+}
+.menuFlex a:last-child, .menuGrid a:last-child{
+    border-bottom-right-radius: 20px;
+}
+.menuFlex a:nth-child(2), .menuGrid a:nth-child(2){
+    background-color: aqua;
+}
+.menuFlex a{
+    text-decoration: none;
+    background-color: rgb(216, 216, 100);
+    color: black;
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1;
+}
+.menuFlex a:hover{
+    background-color: rgb(131, 131, 121);
+    border-bottom: 1px solid black;
+}
+.menuGrid{
+    width: 80%;
+    margin: 20px auto;
+    overflow: hidden;
+    border-top: 2px black;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+.menuGrid a{
+    text-decoration: none;
+    background-color: rgb(216 216 100 );
+    color: black;
+    padding: 20px;
+    text-align: center;
+}
+
+.menuGrid a:hover{
+    background-color: rgb(131, 131, 121);
+    border-bottom: 1px solid black;
+}

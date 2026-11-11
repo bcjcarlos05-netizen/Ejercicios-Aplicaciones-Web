@@ -1,0 +1,51 @@
+/*
+PRACTICA 4 CSS
+Este fichero va a ser nuestra hoja profesional de estilos.
+Sí señor!! Esto va cogiendo forma
+*/
+h1 {
+    background-color: red;
+    color: white;
+    border: solid;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+body {
+    background-color: beige;
+}
+
+a {
+    background-color: rgb(87, 238, 0);
+    border: solid,color(white);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    color: rgb(2, 0, 0);
+
+}
+
+p {
+    background-color: red;
+    color: white;
+    border: solid;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+
+
+img {
+    padding-top: 100px;
+    width: 50%;
+}
+
+#ps5 {
+    background: none;
+}
+
+main{
+    margin-bottom: 1200px;
+}

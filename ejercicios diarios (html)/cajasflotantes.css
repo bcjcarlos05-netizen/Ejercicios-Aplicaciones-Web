@@ -1,0 +1,43 @@
+/*
+Cajas flotantes CSS
+Carlos Rojas Guevara Octubre 2026
+*/
+
+*{
+    margin: 0px;
+    box-sizing: border-box;
+
+
+}
+body{
+    background-color: antiquewhite;
+}
+
+.cabecera{
+    background-color: chartreuse;
+    padding: 50px;
+    text-align: center;
+    border: 3px solid blue;
+}
+
+.panel{
+    background-color: aqua;
+    padding: 20px;
+    float:left;
+    height: 300px;
+    border: 3px solid;
+}
+
+.principal{
+    background-color: blue;
+    padding: 20px;
+    height: 300px;
+    border: 3px solid rgb(118, 118, 119);
+}
+
+.pie{
+
+    background-color: brown;
+    padding: 20px;
+    clear: both;
+}

@@ -1,0 +1,149 @@
+
+/* P7: Reset universal y modelo de caja */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Borde y relleno incluidos en el tamaño total */
+}
+
+/* P5: Estilos generales de la página */
+body {
+    background-color: #f0f4f8;
+    color: #222222;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* P5, P8: Cabecera y sombras de texto */
+header {
+    background-color: #004433;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 20px;
+}
+
+header h1 {
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* P8: Sombra al texto */
+    margin-bottom: 15px;
+}
+
+/* P8, P11: Menú Flexbox horizontal */
+.menu-navegacion {
+    display: flex; /* Activa Flexbox */
+    justify-content: center; /* Centra los elementos */
+    background-color: #111111;
+}
+
+.menu-navegacion a {
+    color: #ffffff;
+    padding: 15px 20px;
+    text-decoration: none; /* Quita subrayado */
+    transition: background-color 0.3s; /* Transición animada */
+}
+
+.menu-navegacion a:hover {
+    background-color: #2e7d32; /* P8: Cambio de color al pasar el ratón */
+}
+
+.menu-navegacion a:first-child {
+    border-left: 4px solid #81c784; /* P8: Borde al primer enlace */
+}
+
+/* P7, P11: Columnas flotantes y sombras de caja */
+.contenedor-principal {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.seccion-principal {
+    float: left; /* P7: Flotado a la izquierda */
+    width: 68%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* P8: Sombra exterior */
+}
+
+.barra-lateral {
+    float: right; /* P7: Flotado a la derecha */
+    width: 28%;
+    background-color: #e8f5e9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.imagen-banner {
+    width: 100%;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.parrafo-destacado {
+    background-color: #f1f8e9;
+    padding: 15px;
+    border-left: 5px solid #2e7d32;
+}
+
+/* P9: Estilo de listas con viñetas personalizadas */
+ul.lista-custom li {
+    list-style-type: none; /* Quita viñeta predeterminada */
+    background-image: url('../img/check.png'); /* P9: Icono como viñeta */
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 25px; /* Separación para el texto */
+    margin-bottom: 10px;
+}
+
+ol.lista-ordenada {
+    list-style-type: lower-alpha; /* P9: Numeración alfabética */
+    padding-left: 25px;
+}
+
+dt {
+    font-weight: bold;
+    color: #004433;
+}
+
+/* P10: Galería CSS Grid con efectos */
+.seccion-galeria {
+    width: 90%;
+    margin: 30px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.grid-galeria {
+    display: grid; /* P10: Maquetación Grid */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas idénticas */
+    gap: 20px; /* Espaciado entre fotos */
+}
+
+.grid-galeria img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.grid-galeria img:hover {
+    transform: scale(1.05); /* P10: Zoom del 5% al hacer hover */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* P6, P11: Pie de página */
+footer {
+    background-color: #111111;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+footer a {
+    color: #81c784;
+    text-decoration: none;
+}

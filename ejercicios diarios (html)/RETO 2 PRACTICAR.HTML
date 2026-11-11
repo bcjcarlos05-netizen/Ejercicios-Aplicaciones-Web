@@ -1,0 +1,95 @@
+<!DOCTYPE html> <!-- P2: Declaración HTML5 -->
+<html lang="es">
+<head>
+  <meta charset="UTF-8"> <!-- P3: Codificación castellana -->
+  <title>Proyecto Integrado - Puntos 1 al 18</title>
+
+  <link rel="icon" href="img/favicon.png" type="image/png"> <!-- P10: Favicón -->
+  
+  <!-- P14: Fuentes de Google Fonts Online -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" type="text/css" href="RETO 2 PRACTICAR.CSS"> <!-- P5: CSS externo -->
+</head>
+<body>
+
+  <header class="deg-header"> <!-- P11, P15: Header semántico con degradado lineal -->
+    <h1 class="titulo-fuente sombra-texto">Desarrollo Web <abbr title="HyperText Markup Language 5">HTML5</abbr></h1> <!-- P2, P3, P14, P15 -->
+    
+    <nav class="menu-navegacion"> <!-- P8, P11: Menú Flexbox semántico -->
+      <a href="#inicio">Inicio</a> <!-- P6: Anclas -->
+      <a href="#media">Multimedia</a>
+      <a href="#carrusel">Carrusel</a>
+      <a href="#tablas">Tablas</a>
+    </nav>
+  </header>
+
+  <main id="inicio" class="contenedor-principal"> <!-- P11: Main semántico -->
+
+    <section class="seccion-principal"> <!-- P11: Section semántica -->
+      <article> <!-- P11: Article semántico -->
+        <h2>Bienvenido a la Web Integrada</h2>
+        <img src="img/banner.jpg" alt="Banner" class="imagen-banner"> <!-- P6: Imagen -->
+        <p class="parrafo-destacado">
+          Proyecto con <strong>formatos</strong>, <em>estilos en REM</em> y <mark>degradados</mark>. <!-- P3, P12, P15 -->
+        </p>
+      </article>
+
+      <article id="media" class="media"> <!-- P13: Sección multimedia -->
+        <h3>Archivos Multimedia</h3>
+        <audio controls loop><source src="audio/musica.mp3" type="audio/mp3"></audio> <!-- P13: Reproductor Audio -->
+        <div class="videos">
+        <video controls width="100%" muted><source src="video/intro.mp4" type="video/mp4"></video> <!-- P13: Reproductor Vídeo -->
+        <iframe src="https://www.youtube.com/embed/FzgPp3Fte98" width="100%" height="250" frameborder="0"></iframe> <!-- P13: Iframe YouTube -->
+        </div>
+      </article>
+
+      <!-- P16: Carrusel de imágenes -->
+      <article id="carrusel">
+        <h3>Carrusel de Imágenes</h3>
+        <div class="carrusel-contenedor">
+          <img src="/Fotos/foto1.jpg" alt="Foto 1">
+          <img src="/Fotos/foto2.jpg" alt="Foto 2">
+        </div>
+      </article>
+
+      <!-- P18: Estructura de Tablas completa -->
+      <article id="tablas">
+        <h3>Tabla Comparativa</h3>
+        <table>
+          <caption>Resultados de Dispositivos 2026</caption> <!-- P18: Título de tabla -->
+          <thead>
+            <tr><th>Posición</th><th>Dispositivo</th><th>Tasa</th></tr> <!-- P18: Encabezados -->
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Smartphone</td><td>2342</td></tr> <!-- P18: Celdas -->
+            <tr><td>2</td><td>Tablet</td><td>1872</td></tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+
+    <aside class="barra-lateral"> <!-- P11: Aside semántico -->
+      <h3>Glosario de Aprendizaje</h3>
+      <ul class="lista-custom"> <!-- P9: Lista desordenada custom -->
+        <li>Unidades REM</li>
+        <li>Fuentes Google y Offline</li>
+      </ul>
+      <dl> <!-- P9: Lista de definición -->
+        <dt>Git</dt><dd>Control de versiones.</dd> <!-- P17 -->
+        <dt>GitHub</dt><dd>Plataforma en la nube.</dd> <!-- P17 -->
+      </dl>
+    </aside>
+
+  </main>
+
+  <div style="clear: both;"></div> <!-- P7: Limpieza flotados -->
+
+  <footer id="contacto"> <!-- P11: Footer semántico -->
+    <p>Contacto: <a href="mailto:frmoisesfr@gmail.com">frmoisesfr@gmail.com</a> | Tel: <a href="tel:+34950451905">+34 950 451 905</a></p> <!-- P6 -->
+    <p><small>Copyright &copy; 2026 - Todos los derechos reservados.</small></p> <!-- P3 -->
+  </footer>
+
+</body>
+</html>

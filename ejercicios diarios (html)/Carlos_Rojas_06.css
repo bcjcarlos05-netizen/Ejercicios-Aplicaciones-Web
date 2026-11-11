@@ -1,0 +1,47 @@
+/*Aquí vamos a decorar nuestro menú*/
+
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
+.menuh a{
+    background-color: rgb(20, 87, 175);
+    color: black;
+    text-decoration: none;
+    float: left;
+    width: 25%;
+    text-align: center;
+    padding: 10px;
+}
+.menuh a:hover{
+    background-color: aqua;
+    color: darkmagenta;
+}
+.menuv a{
+    background-color: rgb(20, 87, 175);
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+.menuv a:hover{
+    background-color: aqua;
+    color: darkmagenta;
+}
+.menuv{
+    float: left;
+    width: 15%;
+    overflow: hidden;
+    clear: both;
+    margin-top: 15px;
+    border: 5px double;
+}
+.menuh{
+    overflow: hidden;
+    border: 5px double;
+}
+img{
+    float: right;
+    width: 85%;
+    border: 5px;
+}

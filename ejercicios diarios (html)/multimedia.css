@@ -1,0 +1,67 @@
+/*
+    CSS Multimedia
+    Carlos Rojas, Nov 2026
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    border: 2px solid blue;
+}
+body{ font-size: 1.6rem;}
+h1 {font-size: 3.2rem;}
+h3 { font-size: 2rem;}
+
+section{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 2rem;
+    margin: 3rem auto 1rem auto;
+    padding: 2rem;
+    width: 90%;
+    background-color: antiquewhite;
+}
+
+video, iframe{
+    width: 100%;
+    border-radius: 1rem;
+}
+
+header, footer{
+    background-color: burlywood;
+    padding: 2rem;
+}
+
+h1,h3{
+    padding: 1rem;
+    text-align: center;
+}
+
+@font-face {
+    font-family: "letra1";
+    src: url(../fuentes/letra1.otf);
+}
+
+h1{
+    font-family: "letra1";
+}
+
+.ms-madi-regular {
+  font-family: "Ms Madi", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+section{
+    box-shadow: 10px 10px 10px rgb(0, 0, 0);
+    margin-top: -10px -10px 20px ;
+}
+
+h1{
+    text-shadow: 3px 3px 3px yellow;
+}

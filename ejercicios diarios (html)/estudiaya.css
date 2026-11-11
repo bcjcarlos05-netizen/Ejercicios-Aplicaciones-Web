@@ -1,0 +1,97 @@
+/*
+Esto es un css para una pagina web titulada: Estudia YA
+Carlos Rojas, Octubre de 2026
+*/
+body {
+    background-color: rgb(123, 183, 183);
+}
+b {
+    color: blue;
+}
+
+header {
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    border-top: 2px black;
+    align-items: center;
+    text-align: center;
+}
+.Hiperenlaces {
+    width: 80%;
+    margin: 20px auto;
+    border-top: 2px black;
+
+}
+.Hiperenlaces a {
+    text-decoration: none;
+        width: 80%;
+    margin: 20px auto;
+    border-top: 2px black;
+        color: black;
+
+}
+img {
+    max-width: 20%;
+}
+
+.Principal {
+    background-color: bisque;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    
+}
+
+.Final{
+    display: flex;
+    padding: 50px;
+    justify-content: space-between;
+}
+.c1 {
+background-color: aliceblue;
+padding: 20px;
+border-radius: 50px;
+}
+
+.c2 {
+background-color: rgb(111, 119, 127);
+padding: 20px;
+border-radius: 50px;
+}
+
+.c3 {
+background-color: rgb(133, 166, 194);
+padding: 20px;
+border-radius: 50px;
+}
+
+.c4 {
+background-color: rgb(168, 193, 214);
+padding: 20px;
+border-radius: 50px;
+}
+
+footer {
+     background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    border-top: 2px black;
+    align-items: center;
+    text-align: center;
+}
+nav {
+    width: 80%;
+    margin: 20px auto;
+    border-top: 2px black;
+    }
+nav a {
+    text-decoration: none;
+        width: 80%;
+    margin: 20px auto;
+    border-top: 2px black;
+        color: black;
+}

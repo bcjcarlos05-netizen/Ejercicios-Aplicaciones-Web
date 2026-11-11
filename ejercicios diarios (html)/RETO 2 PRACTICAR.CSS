@@ -1,0 +1,159 @@
+
+/* P12: Configuración REM (1rem = 10px) y P7: Reset de caja */
+html {
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* P5, P12, P15: Estilos generales y cursor personalizado */
+body {
+    background-color: #f0f4f8;
+    color: #222222;
+    font-family: Arial, sans-serif;
+    font-size: 1.6rem; /* 16px */
+    line-height: 1.6;
+    cursor: help; /* P15: Cursor interactivo */
+}
+
+/* P14: Fuente de Google Fonts */
+.titulo-fuente {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2rem;
+}
+
+/* P8, P11, P15: Header con degradado lineal y sombra de texto */
+.deg-header {
+    background-image: linear-gradient(to right, #004433, #2e7d32);
+    color: white;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.sombra-texto {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* P8, P11: Menú Flexbox */
+.menu-navegacion {
+    display: flex;
+    justify-content: center;
+    background-color: #111111;
+    margin-top: 1.5rem;
+}
+
+.menu-navegacion a {
+    color: #ffffff;
+    padding: 1.5rem 2rem;
+    text-decoration: none;
+    font-size: 1.4rem;
+    transition: background-color 0.3s;
+}
+
+.menu-navegacion a:hover {
+    background-color: #2e7d32;
+}
+
+/* P7, P11: Contenedor y cajas flotantes */
+.contenedor-principal {
+    width: 90%;
+    margin: 2rem auto;
+}
+
+.seccion-principal {
+    float: left;
+    width: 68%;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.barra-lateral {
+    float: right;
+    width: 28%;
+    background-color: #e8f5e9;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+/* Estilo de imagen */
+.imagen-banner {
+    width: 100%;
+    border-radius: 0.8rem;
+    margin: 1.5rem 0;
+}
+
+.media {
+    display: flex;
+}
+
+/* P9: Estilo de lista desordenada personalizada */
+ul.lista-custom li {
+    list-style-type: none;
+    background-image: url('../img/check.png');
+    background-size: 1.6rem;
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* P16: Carrusel de imágenes */
+.carrusel-contenedor {
+    display: flex;
+    overflow: hidden;
+    border-radius: 1rem;
+    margin-top: 1.5rem;
+}
+
+.carrusel-contenedor img {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+/* P18: Estilos de tabla completos */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    background-image: linear-gradient(to bottom, rgba(0, 68, 51, 0.1), white);
+    caption-side: bottom;
+}
+
+caption {
+    margin-top: 1rem;
+    font-style: italic;
+    font-size: 1.4rem;
+}
+
+th {
+    background-color: #004433;
+    color: white;
+    padding: 1rem;
+    text-transform: uppercase;
+}
+
+td {
+    text-align: center;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+/* P6, P11: Pie de página */
+footer {
+    background-color: #111111;
+    color: #ffffff;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+footer a {
+    color: #81c784;
+    text-decoration: none;
+}
