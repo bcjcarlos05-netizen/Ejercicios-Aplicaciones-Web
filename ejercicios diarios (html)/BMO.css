@@ -47,6 +47,12 @@ text-align: center;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* P8: Sombra exterior */
+    .imagen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
 }
 .BMO2 {
     width: 68%;
@@ -105,7 +111,7 @@ text-align: center;
 h2, h3 {
     margin: 1rem 0;
     text-align: center;
-    font-size: 2rem;
+    font-size: 4rem;
 }
 
 p {
