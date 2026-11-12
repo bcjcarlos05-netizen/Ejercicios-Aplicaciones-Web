@@ -1,0 +1,242 @@
+/*
+12/11/2026
+Reto 2 Carlos Rojas
+*/
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    width: auto;
+
+}
+
+html {
+    font-size: 62.5%;
+}
+h1 {
+    color: white;
+}
+body{
+    background-color: greenyellow;
+}
+
+header {
+    background-color: rgb(0, 0, 0);
+    font-size: 1.6rem;
+}
+
+header h1 {
+    text-align: left;
+    padding: 1rem;
+}
+
+.menu-navegacion {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.menu-navegacion a {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    padding: 1,5rem 2rem;
+    text-align: center;
+}
+
+
+.menu-navegacion a:hover {
+    background-color: #2e7d32;
+}
+
+
+.Inicio {
+    margin-top: 5rem;
+    width: 68%;
+    padding: 2rem;
+    background-image: url(./C_RutaVerde/imagenes/imagen_01.jpg);
+        
+    h2{
+        text-align: start;
+        color: white;
+    }
+    }
+
+
+table{
+     width: 68%;
+    background-color: #437ea0;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0rem 0.4rem 1rem rgba(0, 0, 0, 0.1);
+    background-image:
+    linear-gradient(to bottom,
+    rgba(0, 0, 255, 0.51), white);
+    border-collapse: collapse;
+    border: 0.3rem solid black;
+    margin: auto;
+    width: 70%;
+    margin-top: 5rem;
+    caption-side: bottom;
+}
+
+caption{
+    margin: 1rem;
+}
+
+th{
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    text-transform: uppercase;
+}
+
+td{
+    text-align: center; 
+    padding: 1rem;
+    background-color: white;
+    border: black;
+    img{
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+
+.galeria-multimedia {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 68%;
+    background-color: #1d4147;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0rem 0.4rem 1rem rgba(0, 0, 0, 0.1);
+    /* Sombra exterior */
+
+    iframe {
+        gap: 2rem;
+        margin-top: 5rem;
+        width: 50%;
+        height: 50%;
+        border: 0;
+        display: block;
+        margin-bottom: 5rem;
+    }
+    
+    audio {
+        margin-top: 5rem;
+         gap: 2rem;
+        width: 50%;
+        display: block;
+    }
+
+    video {
+        margin-top: 5rem;
+         gap: 2rem;
+        width: 50%;
+        height: auto;
+        display: block;
+    }
+    h2{
+        display: flex;
+        text-align: center;
+    }
+    .carrusel {
+        margin-top: 5rem;
+     width: 68%;
+    background-color: #437ea0;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0rem 0.4rem 1rem rgba(0, 0, 0, 0.1);
+    display: flex;
+    height: 60rem;
+    max-width: 100rem;
+    margin: 0 auto;
+}
+
+.carrusel img {
+    width: 0;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: all 4s ease;
+}
+
+.carrusel img:hover {
+    width: 30rem;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+.carrusel img:first-child {
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+}
+
+.carrusel img:last-child {
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+
+}
+
+.chueca{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 68%;
+    background-color: #1d4147;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    /* P8: Sombra exterior */
+
+    img {
+        max-width: 20%;
+        transition: all ease 2s;
+    }
+
+    img:hover {
+        transform: scale(1.1) rotate(6deg) translate(5px, 6px);
+    }
+}
+
+h2,
+h3 {
+    margin: 1rem 0;
+    text-align: center;
+    font-size: 4rem;
+}
+
+p {
+    font-size: 1.7rem;
+}
+
+li {
+    font-size: 1.6rem;
+}
+
+audio {
+    display: block;
+    width: 80%;
+    height: 4rem;
+}
+
+
+h2 {
+    font-size: 5rem;
+    text-shadow: 0.3rem 0.3rem 0.3rem yellow;
+}
+
+
+h1 {
+    font-size: 4rem;
+    text-shadow: 0.3rem 0.3rem 0.3rem rgb(36, 36, 21);
+}

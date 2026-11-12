@@ -1,0 +1,10 @@
+RECURSOS DEL MODELO A — SABOR LOCAL
+============================================
+imagenes/       9 fotografías temáticas para la galería.
+carrusel/       5 fotografías temáticas para el carrusel.
+video/video_animado.mp4  Vídeo de 18 segundos con movimiento de cámara (zoom/paneo), transiciones, rótulos animados y barra de progreso.
+audio/ambiente.mp3       Audio original breve para la etiqueta audio.
+iframe.html     Página local para insertar mediante iframe.
+favicon.ico     Icono de pestaña personalizado.
+
+Usa exclusivamente los recursos del modelo asignado y conserva las rutas relativas.

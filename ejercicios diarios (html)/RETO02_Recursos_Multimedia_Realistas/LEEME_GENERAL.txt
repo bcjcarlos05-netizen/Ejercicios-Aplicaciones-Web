@@ -1,0 +1,30 @@
+RECURSOS MULTIMEDIA — RETO 02
+=============================
+
+Los recursos gráficos de este paquete son imágenes generadas mediante IA para uso didáctico en este examen.
+No representan necesariamente lugares, eventos, marcas o productos reales.
+
+A_SaborLocal:
+Fotografías temáticas de mercados, productos mediterráneos, aceite, queso, miel, embutidos, olivares, pueblos y edificios tradicionales.
+
+B_SonoraFest:
+Fotografías temáticas de conciertos, músicos, instrumentos, público, mezclas DJ, micrófonos, escenarios y luces de festival.
+
+C_RutaVerde:
+Fotografías temáticas de montañas, bosques, cascadas, senderos, puentes, castillos, pueblos, flora y fauna.
+
+Vídeos:
+Son composiciones animadas de 18 segundos en formato MP4/H.264, 1280×720 y 24 fps. Incluyen paneo/zoom, cambios de escena, rótulos, elementos gráficos en movimiento y barra de progreso. No son una fotografía estática.
+Audio:
+Pistas originales sintetizadas para practicar la etiqueta audio. No son grabaciones documentales.
+
+Cada modelo incluye:
+- imagenes/: 9 JPG para galería.
+- carrusel/: 5 JPG para slider.
+- video/video_animado.mp4.
+- audio/ambiente.mp3.
+- iframe.html.
+- favicon.ico.
+- LEEME.txt.
+
+Conserva las carpetas y utiliza rutas relativas desde el documento HTML.
