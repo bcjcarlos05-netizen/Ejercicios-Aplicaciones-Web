@@ -1,0 +1,175 @@
+<!DOCTYPE html> <!-- P2: Declaración HTML5 -->
+<html lang="es">
+<head>
+  <meta charset="UTF-8"> <!-- P3: Codificación de caracteres latinos -->
+  <title>Ruta Verde - Modelo C (HTML5 y CSS3)</title>
+  <link rel="icon" href="img/favicon.png" type="image/png"> <!-- P10: Favicón -->
+  <!-- P14: Fuente externa online de Google Fonts -->
+  <link href="[suspicious link removed]" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/estilos.css"> <!-- P5: Hoja CSS externa -->
+</head>
+<body>
+
+  <!-- P11: Cabecera semántica con la barra de navegación -->
+  <header class="header-principal">
+    <div class="logo">RUTA VERDE</div>
+    <!-- P8, P11: Menú Flexbox de navegación -->
+    <nav class="menu-navegacion">
+      <a href="#inicio">INICIO</a>
+      <a href="#rutas">RUTAS</a>
+      <a href="#dificultad">DIFICULTAD</a>
+      <a href="#galeria">GALERÍA</a>
+      <a href="#planifica">PLANIFICA</a>
+    </nav>
+  </header>
+
+  <!-- Banner principal (Hero Section) con lema e insignias destacadas -->
+  <section id="inicio" class="hero-banner">
+    <div class="hero-contenido">
+      <h1>Explora, respeta, disfruta</h1>
+      <p class="placeholder-imagen">IMAGEN PANORÁMICA DE PAISAJE</p>
+    </div>
+    <!-- Tarjetas de estadísticas alineadas en flexbox -->
+    <div class="insignias-contenedor">
+      <div class="insignia insignia-circulo">
+        <strong>05</strong>
+        <span>RUTAS</span>
+      </div>
+      <div class="insignia">
+        <strong>42 km</strong>
+        <span>RECORRIDO</span>
+      </div>
+      <div class="insignia">
+        <strong>3</strong>
+        <span>NIVELES</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- P11: Bloque principal semántico "ÍNDICE DE RUTAS + FICHAS VERTICALES" -->
+  <main id="rutas" class="contenedor-principal">
+    <h2>ÍNDICE DE RUTAS + FICHAS VERTICALES</h2>
+
+    <!-- P11: Barra lateral (aside) con el índice de navegación -->
+    <aside class="sidebar-indice">
+      <h3>ÍNDICE DE RUTAS</h3>
+      <ul class="lista-rutas">
+        <li><a href="#ruta1">Ruta 1 &rarr;</a></li>
+        <li><a href="#ruta2">Ruta 2 &rarr;</a></li>
+        <li><a href="#ruta3">Ruta 3 &rarr;</a></li>
+        <li><a href="#ruta4">Ruta 4 &rarr;</a></li>
+        <li><a href="#ruta5">Ruta 5 &rarr;</a></li>
+      </ul>
+    </aside>
+
+    <!-- Fichas de ruta en disposición vertical -->
+    <section class="contenedor-fichas">
+      
+      <!-- Ficha de Ruta 1 (Imagen y texto en paralelo mediante float) -->
+      <article id="ruta1" class="ficha-ruta">
+        <img src="img/ruta1.jpg" alt="Ruta 1" class="img-ficha">
+        <div class="info-ficha">
+          <h3>FICHA DE RUTA 1</h3>
+          <p><small>Distancia: 12 km | Dificultad: Media</small></p>
+          <p>Descripción detallada de la ruta con paisaje de montaña y arroyos naturales.</p>
+        </div>
+      </article>
+
+      <!-- Ficha de Ruta 2 -->
+      <article id="ruta2" class="ficha-ruta">
+        <img src="img/ruta2.jpg" alt="Ruta 2" class="img-ficha">
+        <div class="info-ficha">
+          <h3>FICHA DE RUTA 2</h3>
+          <p><small>Distancia: 8 km | Dificultad: Baja</small></p>
+          <p>Sendero llano bordeando el río con áreas de descanso y senderos accesibles.</p>
+        </div>
+      </article>
+
+      <!-- Ficha de Ruta 3 -->
+      <article id="ruta3" class="ficha-ruta">
+        <img src="img/ruta3.jpg" alt="Ruta 3" class="img-ficha">
+        <div class="info-ficha">
+          <h3>FICHA DE RUTA 3</h3>
+          <p><small>Distancia: 22 km | Dificultad: Alta</small></p>
+          <p>Recorrido de alta montaña para senderistas con ascenso a los picos principales.</p>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- P7: Limpieza de flotados -->
+    <div style="clear: both;"></div>
+  </main>
+
+  <!-- P18: Sección de la Tabla Comparativa de Rutas -->
+  <section id="dificultad" class="seccion-tabla">
+    <h2>TABLA COMPARATIVA DE RUTAS</h2>
+    <table>
+      <caption>Resumen técnico de rutas registradas</caption>
+      <thead>
+        <tr>
+          <th>Ruta</th>
+          <th>Distancia</th>
+          <th>Dificultad</th>
+          <th>Duración Estimada</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Ruta 1 - Montaña</td><td>12 km</td><td>Media</td><td>3h 30min</td></tr>
+        <tr><td>Ruta 2 - Rivera</td><td>8 km</td><td>Baja</td><td>2h 00min</td></tr>
+        <tr><td>Ruta 3 - Picos</td><td>22 km</td><td>Alta</td><td>6h 15min</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- P13, P15, P16: Sección de módulos multimedia e interactivos -->
+  <section id="galeria" class="seccion-multimedia">
+    <h2>MAPA / IFRAME &middot; GALERÍA &middot; CARRUSEL &middot; AUDIO / VÍDEO</h2>
+    
+    <!-- P13: Iframe para Mapa -->
+    <div class="bloque-mapa">
+      <h3>Ubicación e Itinerario (Mapa / Iframe)</h3>
+      <iframe src="[suspicious link removed]!" width="100%" height="250" frameborder="0" loading="lazy"></iframe>
+    </div>
+
+    <!-- P10: Galería en cuadrícula CSS Grid -->
+    <div class="bloque-galeria">
+      <h3>Galería de Fotografía (CSS Grid)</h3>
+      <div class="grid-galeria">
+        <img src="img/g1.jpg" alt="Foto 1">
+        <img src="img/g2.jpg" alt="Foto 2">
+        <img src="img/g3.jpg" alt="Foto 3">
+      </div>
+    </div>
+
+    <!-- P16: Carrusel deslizante de imágenes -->
+    <div id="planifica" class="bloque-carrusel">
+      <h3>Carrusel de Panorámicas</h3>
+      <div class="carrusel-contenedor">
+        <div class="carrusel-slider">
+          <img src="img/slide1.jpg" alt="Slide 1">
+          <img src="img/slide2.jpg" alt="Slide 2">
+        </div>
+      </div>
+    </div>
+
+    <!-- P13: Reproductores de Audio y Vídeo nativos -->
+    <div class="bloque-av">
+      <h3>Audioguía y Vídeo Promocional</h3>
+      <audio controls class="reproductor-audio">
+        <source src="audio/guia.mp3" type="audio/mp3">
+      </audio>
+      <video controls width="100%" muted class="reproductor-video">
+        <source src="video/promo.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+
+  <!-- P11: Pie de página semántico -->
+  <footer class="footer-principal">
+    <p><strong>IES Cura Valera &middot; HTML5 y CSS3</strong></p>
+    <p><small>Copyright &copy; 2026 - Todos los derechos reservados</small></p>
+  </footer>
+
+</body>
+</html>

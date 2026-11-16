@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="formulario.css">
+</head>
+
+<body>
+    <div class="contacto">
+        <h1>Contacto</h1>
+        <div class="linea"></div>
+        <form action="contact.php" method="post" class="formulario">
+            <input type="text" placeholder="Tu Nombre" name="nombre">
+            <input type="email" placeholder="Correo electrónico" name="email">
+            <input type="tel" placeholder="Teléfono" name="telefono">
+            <textarea placeholder="Tu mensaje" rows="3" name="mensaje"></textarea>
+            <select id="pais" name="paises[]">
+                <option value="peru">Perú</option>
+                <option value="españa">España</option>
+                <option value="honduras">Honduras</option>
+                <option value="usa">Otro</option>
+            </select>
+            <input type="date" id="fecha" name="fecha">
+            <input type="color" id="favcolor" name="favcolor" placeholder="Color favorito">
+            <input type="password" id="pwd" name="pwd" placeholder="Introduzca su contraseña">
+            <input type="range"  id="a" name="a" value="50" placeholder="Elija valor">
+            <input type="number" id="quantity" name="quantity" min="0" max="100" step="10" value="30">
+            <button type="reset">Limpiar</button>
+            <button type="button">Otro botón</button>
+             <input type="submit" value="Enviar">
+
+        </form>
+    </div>
+
+</body>
+
+</html>

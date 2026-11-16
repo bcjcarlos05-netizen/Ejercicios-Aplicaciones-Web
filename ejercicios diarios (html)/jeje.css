@@ -1,0 +1,309 @@
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* P5, P14: Estilos generales del sitio */
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.6rem;
+  background-color: #eef2f5;
+  color: #2b2b2b;
+  line-height: 1.6;
+}
+
+/* P8, P11: Estilizado del Header y Menú Flexbox */
+.header-principal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2b3336;
+  color: #ffffff;
+  padding: 1.5rem 3rem;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+.menu-navegacion {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.menu-navegacion a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.4rem;
+  transition: background-color 0.3s;
+}
+
+.menu-navegacion a:hover {
+  background-color: #435256;
+}
+
+/* Hero Banner con distintivos estadísticos */
+.hero-banner {
+  background-color: #d9e2e6;
+  padding: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #becbd0;
+}
+
+.hero-contenido h1 {
+  font-size: 2.8rem;
+  color: #2b3336;
+  margin-bottom: 1rem;
+}
+
+.placeholder-imagen {
+  font-size: 1.4rem;
+  color: #607177;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* P8: Insignias flexbox destacadas */
+.insignias-contenedor {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.insignia {
+  background-color: #607177;
+  color: #ffffff;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  min-width: 9rem;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
+}
+
+.insignia-circulo {
+  border-radius: 50%; /* P5: Forma circular */
+  width: 8rem;
+  height: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.insignia strong {
+  display: block;
+  font-size: 2.2rem;
+}
+
+.insignia span {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+/* P7, P11: Maquetación del bloque principal e índice */
+.contenedor-principal {
+  width: 90%;
+  margin: 3rem auto;
+}
+
+.contenedor-principal &gt; h2 {
+  font-size: 1.8rem;
+  color: #435256;
+  margin-bottom: 2rem;
+}
+
+/* P7: Aside / Sidebar izquierdo */
+.sidebar-indice {
+  float: left;
+  width: 25%;
+  background-color: #607177;
+  color: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.sidebar-indice h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #7e9198;
+  padding-bottom: 0.8rem;
+}
+
+.lista-rutas {
+  list-style: none;
+}
+
+.lista-rutas li {
+  margin-bottom: 1.2rem;
+}
+
+.lista-rutas a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.4rem;
+  transition: padding-left 0.2s;
+}
+
+.lista-rutas a:hover {
+  padding-left: 0.5rem;
+}
+
+/* P7: Contenedor de fichas de ruta a la derecha */
+.contenedor-fichas {
+  float: right;
+  width: 72%;
+}
+
+/* P7: Ficha individual con float de imagen y texto */
+.ficha-ruta {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.8rem;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.ficha-ruta::after { /* Clearfix */
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.img-ficha {
+  float: left; /* P7: Flotado a la izquierda */
+  width: 30%;
+  height: 11rem;
+  object-fit: cover;
+  border-radius: 0.6rem;
+  background-color: #d9e2e6;
+}
+
+.info-ficha {
+  float: right; /* P7: Flotado a la derecha */
+  width: 66%;
+}
+
+.info-ficha h3 {
+  font-size: 1.6rem;
+  color: #2b3336;
+  margin-bottom: 0.5rem;
+}
+
+/* P18: Estilizado de la Tabla Comparativa */
+.seccion-tabla {
+  width: 90%;
+  margin: 3rem auto;
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+th {
+  background-color: #435256;
+  color: #ffffff;
+  padding: 1.2rem;
+  text-align: left;
+  font-size: 1.4rem;
+}
+
+td {
+  padding: 1.2rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* P10, P13, P16: Estilos de la sección Multimedia */
+.seccion-multimedia {
+  width: 90%;
+  margin: 3rem auto;
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 1rem;
+}
+
+.seccion-multimedia &gt; h2 {
+  font-size: 1.6rem;
+  color: #435256;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.grid-galeria {
+  display: grid; /* P10: CSS Grid */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.grid-galeria img {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+  border-radius: 0.6rem;
+  transition: transform 0.3s;
+}
+
+.grid-galeria img:hover {
+  transform: scale(1.04);
+}
+
+/* P16: Slider de Carrusel */
+.carrusel-contenedor {
+  overflow: hidden;
+  border-radius: 0.8rem;
+  margin-top: 1rem;
+}
+
+.carrusel-slider {
+  display: flex;
+  width: 200%;
+  animation: deslizar 10s infinite ease-in-out;
+}
+
+.carrusel-slider img {
+  width: 50%;
+  height: 20rem;
+  object-fit: cover;
+}
+
+@keyframes deslizar {
+  0%, 45% { transform: translateX(0%); }
+  50%, 95% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+.bloque-av {
+  margin-top: 2rem;
+}
+
+.reproductor-audio {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+/* P11: Estilos del Footer */
+.footer-principal {
+  background-color: #2b3336;
+  color: #ffffff;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 4rem;
+}
