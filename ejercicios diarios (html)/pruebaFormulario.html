@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Práctica completa de formularios HTML5</title>
+  <link rel="stylesheet" href="pruebaFormulario.css">
+</head>
+<body>
+  <header>
+    <h1>Práctica completa: formularios en HTML5</h1>
+  </header>
+
+  <main>
+    <form action="#" method="post" enctype="multipart/form-data" autocomplete="on">
+
+      <fieldset>
+        <legend>1. Datos personales</legend>
+        <p>
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre"
+                 placeholder="Escribe tu nombre"
+                 minlength="2" maxlength="40"
+                 size="30" required autocomplete="given-name">
+        </p>
+        <p>
+          <label for="apellidos">Apellidos:</label>
+          <input type="text" id="apellidos" name="apellidos"
+                 placeholder="Escribe tus apellidos"
+                 maxlength="60" required autocomplete="family-name">
+        </p>
+        <p>
+          <label for="contrasena">Contraseña:</label>
+          <input type="password" id="contrasena" name="contrasena"
+                 minlength="8" maxlength="30"
+                 placeholder="Mínimo 8 caracteres" required
+                 autocomplete="new-password">
+        </p>
+        <p>
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email"
+                 placeholder="nombre@ejemplo.com" required
+                 autocomplete="email">
+        </p>
+        <p>
+          <label for="telefono">Teléfono:</label>
+          <input type="tel" id="telefono" name="telefono"
+                 placeholder="+34 600 000 000"
+                 pattern="[+]?[0-9 ]{9,15}"
+                 autocomplete="tel">
+        </p>
+        <p>
+          <label for="web">Página web:</label>
+          <input type="url" id="web" name="web"
+                 placeholder="https://www.ejemplo.com">
+        </p>
+        <p>
+          <label for="buscar">Buscar:</label>
+          <input type="search" id="buscar" name="buscar"
+                 placeholder="Introduce palabras clave">
+        </p>
+        <p>
+          <label for="edad">Edad:</label>
+          <input type="number" id="edad" name="edad"
+                 min="0" max="120" step="1" value="18">
+        </p>
+        <p>
+          <label for="pais">País:</label>
+          <select id="pais" name="pais">
+            <option value="">-- Selecciona un país --</option>
+            <option value="es" selected>España</option>
+            <option value="fr">Francia</option>
+            <option value="it">Italia</option>
+            <option value="pt">Portugal</option>
+            <option value="de">Alemania</option>
+            <option value="otro">Otro</option>
+          </select>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>3. Selección de opciones</legend>
+
+        <p>Curso que te interesa (radio: una sola opción):</p>
+        <label>
+          <input type="radio" name="curso" value="html" checked>
+          HTML y CSS
+        </label>
+        <label>
+          <input type="radio" name="curso" value="javascript">
+          JavaScript
+        </label>
+        <label>
+          <input type="radio" name="curso" value="python">
+          Python
+        </label>
+        <p>Lenguajes que conoces (checkbox: varias opciones):</p>
+        <label>
+          <input type="checkbox" name="lenguajes[]" value="html">
+          HTML
+        </label>
+        <label>
+          <input type="checkbox" name="lenguajes[]" value="css">
+          CSS
+        </label>
+        <label>
+          <input type="checkbox" name="lenguajes[]" value="javascript">
+          JavaScript
+        </label>
+        <label>
+          <input type="checkbox" name="lenguajes[]" value="python">
+          Python
+        </label>
+        <p>
+          <label for="nivel">Nivel de conocimientos:</label>
+          <select id="nivel" name="nivel" required>
+            <option value="">-- Selecciona tu nivel --</option>
+            <optgroup label="Nivel inicial">
+              <option value="principiante">Principiante</option>
+              <option value="basico">Básico</option>
+            </optgroup>
+            <optgroup label="Nivel avanzado">
+              <option value="intermedio">Intermedio</option>
+              <option value="avanzado">Avanzado</option>
+            </optgroup>
+          </select>
+        </p>
+        <p>
+          <label for="aficiones">Aficiones (puedes seleccionar varias):</label>
+          <select id="aficiones" name="aficiones[]" multiple size="5">
+            <option value="videojuegos">Videojuegos</option>
+            <option value="deporte">Deporte</option>
+            <option value="musica">Música</option>
+            <option value="lectura">Lectura</option>
+            <option value="tecnologia">Tecnología</option>
+            <option value="viajes">Viajes</option>
+          </select>
+        </p>
+        <p>
+          <label for="navegador">¿Qué navegador utilizas?</label>
+          <input list="navegadores" id="navegador" name="navegador"
+                 placeholder="Escribe o selecciona">
+          <datalist id="navegadores">
+            <option value="Google Chrome">
+            <option value="Mozilla Firefox">
+            <option value="Microsoft Edge">
+            <option value="Safari">
+            <option value="Opera">
+            <option value="Brave">
+          </datalist>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>4. Fechas y horas</legend>
+        <p>
+          <label for="fecha">Fecha:</label>
+          <input type="date" id="fecha" name="fecha">
+        </p>
+
+        <p>
+          <label for="mes">Mes:</label>
+          <input type="month" id="mes" name="mes">
+        </p>
+        <p>
+          <label for="semana">Semana:</label>
+          <input type="week" id="semana" name="semana">
+        </p>
+        <p>
+          <label for="hora">Hora:</label>
+          <input type="time" id="hora" name="hora">
+        </p>
+        <p>
+          <label for="fecha-hora">Fecha y hora local:</label>
+          <input type="datetime-local" id="fecha-hora" name="fecha_hora">
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>5. Archivos, colores y valores</legend>
+        <p>
+          <label for="foto">Seleccionar una imagen:</label>
+          <input type="file" id="foto" name="foto"
+                 accept="image/png, image/jpeg, image/webp">
+        </p>
+        <p>
+          <label for="documentos">Seleccionar varios documentos:</label>
+          <input type="file" id="documentos" name="documentos[]"
+                 accept=".pdf,.doc,.docx,.odt" multiple>
+        </p>
+        <p>
+          <label for="color">Color favorito:</label>
+          <input type="color" id="color" name="color" value="#3366ff">
+        </p>
+        <p>
+          <label for="volumen">Nivel de volumen:</label>
+          <input type="range" id="volumen" name="volumen"
+                 min="0" max="100" step="5" value="50">
+        </p>
+        <p>
+          <label for="cantidad">Cantidad (de 0 a 100, de 10 en 10):</label>
+          <input type="number" id="cantidad" name="cantidad"
+                 min="0" max="100" step="10" value="30">
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>6. Comentarios y texto</legend>
+        <p>
+          <label for="comentario">Cuéntanos algo sobre ti:</label><br>
+          <textarea id="comentario" name="comentario"
+                    rows="6" cols="50"
+                    minlength="10" maxlength="500"
+                    placeholder="Escribe aquí tu comentario..."></textarea>
+        </p>
+        <p>
+          <label for="campo-deshabilitado">Campo deshabilitado:</label>
+          <input type="text" id="campo-deshabilitado"
+                 value="Este campo está deshabilitado" disabled>
+          <small>Un campo disabled no se puede editar y no se envía con el formulario.</small>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>7. Aceptación y validación</legend>
+        <p>
+          <label>
+            <input type="checkbox" name="acepta_condiciones"
+                   value="si" required>
+            He leído y acepto las condiciones.
+          </label>
+        </p>
+        <p>
+          <label for="dni">DNI (ejemplo de pattern):</label>
+          <input type="text" id="dni" name="dni"
+                 pattern="[0-9]{8}[A-Za-z]"
+                 maxlength="9"
+                 placeholder="12345678A"
+                 title="Introduce 8 números seguidos de una letra">
+        </p>
+        <p>
+          <label for="porcentaje">Porcentaje:</label>
+          <input type="number" id="porcentaje" name="porcentaje"
+                 min="0" max="100" step="0.5">
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>8. Botones del formulario</legend>
+        <p>
+          <input type="submit" value="Enviar formulario">
+          <input type="reset" value="Restablecer campos">
+        </p>
+        <p>
+          <button type="submit">Enviar con button</button>
+          <button type="reset">Limpiar con button</button>
+          <button type="button" onclick="alert('Has pulsado un botón normal.')">
+            Botón normal
+          </button>
+        </p>
+      </fieldset>
+    </form>
+    <hr>
+
+    <section>
+      <h2>9. Elementos adicionales relacionados con formularios</h2>
+      <h3>progress</h3>
+      <label for="progreso">Progreso de una tarea:</label>
+      <progress id="progreso" value="65" max="100">65%</progress>
+      <h3>meter</h3>
+      <label for="medidor">Nivel de batería:</label>
+      <meter id="medidor" min="0" max="100" low="20"
+             high="80" optimum="100" value="75">75%</meter>
+    </section>
+    <hr>
+  </main>
+
+  <footer>
+    <p>Fin de la práctica de formularios HTML5.</p>
+  </footer>
+</body>
+</html>

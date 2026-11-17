@@ -1,0 +1,304 @@
+
+
+/* ---------- 1. Reiniciar estilos y unidades REM (cap. 7 y 12) ---------- */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body{
+  font-size: 1.6rem; /* 16px */
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f1f3f8;
+  color: #1f2937;
+  width: 70%;
+  margin: auto;
+  padding: 2.4rem 0;
+}
+
+/* ---------- 2. Cabecera ---------- */
+header{
+  background-color: #1b2338;
+  color: white;
+  text-align: center;
+  padding: 3rem 2rem;
+  border-radius: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+header h1{
+  font-size: 3rem;
+}
+
+/* ---------- 3. Tarjetas (fieldset + legend) ---------- */
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+fieldset{
+  border: none;
+  background-color: white;
+  border-radius: 1.2rem;
+  padding: 1.8rem;
+  box-shadow: 0px 2px 8px rgba(30, 41, 59, 0.12);
+  /* Dos columnas con CSS Grid */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 3rem;
+}
+
+legend{
+  background-color: #3b5bdb;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 0.7rem 1.4rem;
+  border-radius: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+/* Cada párrafo es un bloque: etiqueta arriba, campo debajo */
+p{
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  font-size: 1.4rem;
+  color: #3b4660;
+}
+
+/* ---------- 4. Etiquetas ---------- */
+label{
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #2d3a55;
+}
+
+/* Etiquetas que envuelven un radio o checkbox: texto normal y en línea */
+fieldset > label,
+label:first-child:last-child{
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-weight: normal;
+  color: #3b4660;
+}
+
+small{
+  font-size: 1.2rem;
+  color: #7a8399;
+}
+
+/* ---------- 5. Campos de entrada ---------- */
+input,
+select,
+textarea{
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
+  color: #1f2937;
+  background-color: #fafbfd;
+  border: solid 1px #d5dae5;
+  border-radius: 0.8rem;
+  padding: 1.2rem;
+}
+
+select{
+  padding: 1rem 1.2rem;
+}
+
+select[multiple]{
+  padding: 0.8rem 1.2rem;
+}
+
+textarea{
+  padding: 1.4rem;
+}
+
+::placeholder{
+  color: #8b93a7;
+}
+
+/* Foco y validación (pseudoclases del cap. 19) */
+input:focus,
+select:focus,
+textarea:focus{
+  outline: none;
+  border-color: #3b5bdb;
+  box-shadow: 0px 0px 0px 3px rgba(59, 91, 219, 0.25);
+}
+
+input:focus:invalid,
+textarea:focus:invalid{
+  border-color: #e03131;
+  box-shadow: 0px 0px 0px 3px rgba(224, 49, 49, 0.2);
+}
+
+input:disabled{
+  cursor: not-allowed;
+}
+
+/* Radio y checkbox */
+input[type="radio"],
+input[type="checkbox"]{
+  width: 1.6rem;
+  height: 1.6rem;
+  padding: 0;
+  accent-color: #3b5bdb;
+  cursor: pointer;
+}
+
+/* Rango */
+input[type="range"]{
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  accent-color: #3b5bdb;
+}
+
+/* Selector de color */
+input[type="color"]{
+  width: 4.6rem;
+  height: 4rem;
+  padding: 0.4rem;
+  cursor: pointer;
+}
+
+/* Archivos: caja con borde discontinuo */
+input[type="file"]{
+  width: auto;
+  align-self: flex-start;
+  font-size: 1.2rem;
+  color: #5b647a;
+  background-color: #f4f6fb;
+  border: dashed 1px #aab3c8;
+  padding: 0.8rem;
+}
+
+/* ---------- 6. Botones ---------- */
+input[type="submit"],
+input[type="reset"],
+button{
+  width: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.8rem;
+  padding: 1.2rem 2rem;
+  cursor: pointer;
+}
+
+/* Enviar: azul */
+input[type="submit"],
+button[type="submit"]{
+  background-color: #3b5bdb;
+  color: white;
+}
+
+input[type="submit"]:hover,
+button[type="submit"]:hover{
+  background-color: #2f49b5;
+}
+
+/* Restablecer / limpiar: gris */
+input[type="reset"],
+button[type="reset"]{
+  background-color: #e2e6ee;
+  color: #3b4660;
+}
+
+input[type="reset"]:hover,
+button[type="reset"]:hover{
+  background-color: #cfd5e1;
+}
+
+/* Botón normal: azul claro */
+button[type="button"]{
+  background-color: #dce6ff;
+  color: #3b5bdb;
+}
+
+button[type="button"]:hover{
+  background-color: #c5d5ff;
+}
+
+/* Última tarjeta (botones): los párrafos van en fila */
+fieldset:last-child p{
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* ---------- 7. Separadores y sección adicional ---------- */
+hr{
+  border: none;
+  height: 1px;
+  background-color: #dde2ec;
+  margin: 2.4rem 0;
+}
+
+section{
+  background-color: white;
+  border-radius: 1.2rem;
+  padding: 1.8rem;
+  box-shadow: 0px 2px 8px rgba(30, 41, 59, 0.12);
+}
+
+section h2{
+  font-size: 2.2rem;
+  color: #1f2937;
+  margin: 1rem 0 2rem 0;
+}
+
+section h3{
+  font-size: 1.7rem;
+  color: #2d3a55;
+  margin: 1.4rem 0 0.8rem 0;
+}
+
+progress,
+meter{
+  width: 28rem;
+  height: 1.2rem;
+  accent-color: #3b5bdb;
+}
+
+/* ---------- 8. Pie de página ---------- */
+footer{
+  text-align: center;
+  font-size: 1.3rem;
+  color: #7a8399;
+  padding: 1rem 0 2rem 0;
+}
+
+/* ---------- 9. Responsive (Media Queries, cap. 23) ---------- */
+@media (max-width: 800px){
+  body{
+    width: 94%;
+  }
+  fieldset{
+    grid-template-columns: 1fr;
+  }
+  header h1{
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 400px){
+  fieldset:last-child p{
+    flex-direction: column;
+  }
+  progress,
+  meter{
+    width: 100%;
+  }
+}
