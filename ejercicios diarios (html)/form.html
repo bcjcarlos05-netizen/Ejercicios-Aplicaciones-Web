@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción a un curso</title>
+</head>
+<body>
+
+    <h1>Inscripción a un curso</h1>
+    <p>Completa el formulario para solicitar tu inscripción.</p>
+    <form action="procesar.php" method="post">
+        <p>
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" name="nombre" required>
+        </p>
+        <p>
+            <label for="email">Correo electrónico:</label><br>
+            <input type="email" id="email" name="email" required>
+        </p>
+        <p>
+            <label for="edad">Edad:</label><br>
+            <input type="number" id="edad" name="edad" min="12" max="99" required>
+        </p>
+        <p>
+            <label for="curso">Curso:</label><br>
+            <select id="curso" name="curso" required>
+                <option value="">Selecciona un curso</option>
+                <option value="HTML y CSS">HTML y CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Python">Python</option>
+            </select>
+        </p>
+        <p>
+            <label for="comentario">¿Por qué quieres realizar este curso?</label><br>
+            <textarea id="comentario" name="comentario" rows="4" cols="35" maxlength="300"></textarea>
+        </p>
+        <button type="submit">Enviar inscripción</button>
+    </form>
+
+</body>
+</html>

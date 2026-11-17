@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+h1 {
+    color: white;
+    font-size: 3rem;
+}
+
+legend {
+    font-size: 2rem;
+    color: white;
+    background-color: blue;
+    border-radius: 0.6rem;
+    padding: 0.6rem 1rem;
+}
+
+p, section {
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    margin: 0.6rem;
+
+    input, select, button{
+        padding: 0.8rem;
+        border-radius: 0.6rem;
+        border-color: white;
+        background-color: rgb(255, 255, 255);
+    }
+
+    label{
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+    }
+    
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    padding: 25px 20px;
+}
+
+body {
+    width: 100rem;
+    max-width: 95%;
+    margin: 0 auto;
+    background-color: gainsboro;
+}
+
+fieldset {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 2rem;
+    margin: 2rem;
+    background-color: rgb(171, 153, 153);
+}
+
+section {
+    border-radius: 2rem;
+    margin: 2rem;
+    padding-left: 0.6rem;
+    padding-bottom: 0.6rem;
+    background-color: rgb(255, 255, 255)
+}
