@@ -13,7 +13,14 @@
         <h1>Contacto</h1>
         <div class="linea"></div>
         <form action="contact.php" method="post" class="formulario">
-            <input type="text" placeholder="Tu Nombre" name="nombre">
+            <fieldset>
+                <legend>Datos Personales</legend>
+                <label for="fname">Nombre: </label>
+                <input type="text" id="fname" name="fname">
+                <label for="lname">Apellidos</label>
+                <input type="text" id="lname" name="lname"<br><br>
+            </fieldset>
+            <input type="text" placeholder="Nombre de usuario" name="nombre">
             <input type="email" placeholder="Correo electrónico" name="email">
             <input type="tel" placeholder="Teléfono" name="telefono">
             <textarea placeholder="Tu mensaje" rows="3" name="mensaje"></textarea>
@@ -26,11 +33,11 @@
             <input type="date" id="fecha" name="fecha">
             <input type="color" id="favcolor" name="favcolor" placeholder="Color favorito">
             <input type="password" id="pwd" name="pwd" placeholder="Introduzca su contraseña">
-            <input type="range"  id="a" name="a" value="50" placeholder="Elija valor">
+            <input type="range" id="a" name="a" value="50" placeholder="Elija valor">
             <input type="number" id="quantity" name="quantity" min="0" max="100" step="10" value="30">
             <button type="reset">Limpiar</button>
             <button type="button">Este botón no hace nada</button>
-             <input type="submit" value="Enviar">
+            <input type="submit" value="Enviar">
 
         </form>
     </div>
