@@ -1,0 +1,52 @@
+/*
+23/11/2026
+Carlos Rojas Guevara
+*/
+*{
+    margin: 10px;
+    box-sizing: border-box;
+    border-radius: 25px;
+}
+
+*::selection{
+    background: red;
+}
+
+h1{
+    text-align: center;
+    text-transform: uppercase;
+}
+#titulo2::before,#titulo2::after{
+    content: "''";
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#titulo2{
+    color: white;
+    text-transform: lowercase;
+}
+
+main{
+    padding: 10px;
+    background-image: linear-gradient(to bottom, rgb(64, 0, 255), white);
+}
+
+article{
+    margin-top: 50px;
+    font-size: 1.5rem;
+    text-align: justify;
+    column-count: 3;
+    column-gap: 2rem;
+    column-rule: 3px solid brown;
+}
+
+p::first-letter{
+    font-size: 3rem;
+    color: brown;
+}
+
+p::first-line{
+    color: green;
+}
