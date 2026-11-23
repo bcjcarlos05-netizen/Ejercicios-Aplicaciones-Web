@@ -39,7 +39,7 @@ article{
     text-align: justify;
     column-count: 3;
     column-gap: 2rem;
-    column-rule: 3px solid brown;
+    column-rule: 3px solid rgb(255, 255, 255);
 }
 
 p::first-letter{
@@ -48,5 +48,5 @@ p::first-letter{
 }
 
 p::first-line{
-    color: green;
+    color: rgb(157, 255, 0);
 }
