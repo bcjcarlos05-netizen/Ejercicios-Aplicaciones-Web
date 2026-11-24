@@ -1,0 +1,88 @@
+/*
+One Page Scroll
+24/11/26
+*/
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+body{
+    font-size: 1.6rem;
+    width: 90%;
+    margin: auto;
+}
+h1{
+    font-size: 4rem;
+}
+img{
+    width: 80%;
+}
+header, footer{
+    background-color: #466775;
+    padding: 2rem;
+}
+section{
+    background-color: #2CA6DB;
+    h2{
+        background-color: #57a2c2;
+        border-bottom: 5px dotted black;
+    }
+    *{
+        padding: 1rem;
+    }
+    border-radius: 1rem;
+    transition: 1s;
+    animation: aparecer 2s;
+}
+
+@keyframes aparecer{
+    from{
+        opacity: 0;
+        transform: scale(1.2);
+    }to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+ section:hover{
+        box-shadow: 0 5px 20px gray;
+        opacity: 0.8;
+        filter: contrast(1.5);
+        animation: aparecer  2s;
+    }
+
+.contenido{
+    display: flex;
+    gap: 1rem;
+    img{
+        width: 50%;
+    }
+}
+
+main{
+    width: 80%;
+    margin: auto;
+}
+
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    a{
+        text-decoration: none;
+        color: white;
+        padding: 1rem;
+    }
+    a:hover{
+        background-color: #2CA6DB;
+    }
+}
+
+@keyframes revelarScroll{
+    from{
+        opacity: 0;
+        transform: translate(80px,80px) scale()
+    }
+}

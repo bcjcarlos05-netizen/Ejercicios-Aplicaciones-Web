@@ -1,0 +1,97 @@
+/*
+    OnePageScroll CSS
+    Noviembre 2026, Moisés Fernández
+*/
+
+html{
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1REM = 10 píxeles */
+  scroll-behavior: smooth;
+}
+body{ 
+  font-size: 1.6rem;/*Para que todo el texto tenga 16 píxeles */
+  width: 90%;
+  margin: auto;
+}
+h1{ font-size: 3rem; /* 4rem = 40 píxeles */}
+
+header, footer{
+    background-color:#4389A8;
+    padding: 2rem;
+}
+
+section{
+    background-color: #2ca7db77;
+    h2{
+        background-color: #57a2c2;
+        border-bottom: 5px dotted black;
+    }
+    *{
+        padding: 1rem;
+    }
+    border-radius: 1rem;
+    transition: 1s;
+
+}
+
+@keyframes aparecer{
+    from{
+        opacity: 0;
+        transform: scale(1.2) rotate(-15deg);
+    }to{
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    } 
+}
+
+section:hover{
+    box-shadow: 0 5px 20px gray;
+    opacity: 0.8;
+    filter:grayscale(1);
+    animation: aparecer 2s;
+}
+
+.contenido{
+    display: flex;
+    gap: 1rem;
+    img{
+        width: 50%;
+    }
+}
+
+main{
+    width: 80%;
+    margin: auto;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    a{
+        text-decoration: none;
+        color: white;
+        padding: 1rem;
+    }
+    a:hover{
+        background-color: #2CA6DB;
+    }
+}
+
+@keyframes revelarScroll{
+    from{
+        opacity: 0;
+        transform: translate(80px,80px) scale(0.5);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0,0) scale(1);
+    }
+}
+
+section{
+    animation: revelarScroll linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 100%;
+}
+
+
