@@ -142,11 +142,11 @@ h1 {
 
 .boton {
     display: inline-block;
-    background: linear-gradient(45deg, #6c2bd9, #00e5ff);
+    background-color: #00e5ff;
     box-shadow: .5rem .5rem 1rem #000;
     border-radius: 2.5rem;
     padding: 1.2rem 3rem;
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
 
