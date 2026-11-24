@@ -1,12 +1,165 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-ES">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto</title>
-    <link rel="stylesheet" href="Proyecto.css">
+    <title>PixelVault | Tienda de videojuegos</title>
+    <link rel="icon" href="img/logos/favicon.ico">
+   <link rel="stylesheet" href="./Proyecto.css">
 </head>
+
 <body>
-    
+
+    <header id="inicio" class="cabecera">
+        <img src="./Fotos/Foto1.png" alt="Logo PixelVault" class="logo">
+        <nav>
+            <ul id="menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#precios">Precios</a></li>
+                <li><a href="#multimedia">Multimedia</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <video autoplay muted loop class="video-fondo">
+            <source src="/Proyecto-web/Video/VideoFondo.mp4" type="video/mp4">
+        </video>
+        <div class="hero-texto">
+            <h1>Tu próxima aventura empieza aquí</h1>
+            <a href="#catalogo" class="boton">Ver catálogo</a>
+        </div>
+    </section>
+
+    <section id="nosotros">
+        <div class="contenedor">
+            <h2>Sobre nosotros</h2>
+            <div class="columnas">
+                <p>Texto largo...</p>
+            </div>
+            <ul class="servicios">
+                <li>Servicios
+                    <ul>
+                        <li>Venta de juegos físicos</li>
+                        <li>Claves digitales</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="catalogo">
+        <div class="contenedor">
+            <h2>Catálogo</h2>
+            <audio controls loop>
+                <source src="/Proyecto-web/Audio/Audio-fondo.mp3" type="audio/mpeg">
+            </audio>
+
+            <div class="tarjetas">
+                <figure>
+                    <img src="img/productos/juego1.jpg" alt="Juego 1">
+                    <figcaption>Nombre del juego - 59,99 €</figcaption>
+                </figure>
+                <!-- más figure -->
+            </div>
+
+            <ol class="top-ventas">
+                <li>Top ventas
+                    <ul>
+                        <li>PC</li>
+                        <li>PlayStation</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="galeria">
+        <div class="contenedor">
+            <h2>Galería</h2>
+            <div class="galeriaa">
+                <img src="./Fotos/Foto2.jpg" alt="...">
+                <img src="./Fotos/Foto3.png" alt="...">
+                <img src="./Fotos/Foto4.png" alt="...">
+                <img src="./Fotos/Foto5.png" alt="...">
+                <img src="./Fotos/Foto6.png" alt="...">
+                <img src="./Fotos/Foto7.png" alt="...">
+                <img src="./Fotos/Foto8.png" alt="...">
+                <img src="./Fotos/Foto9.png" alt="...">
+            </div>
+        </div>
+    </section>
+
+    <section id="multimedia">
+        <div class="contenedor">
+            <h2>Tráilers</h2>
+            <div class="videos">
+                <video controls>
+                    <source src="video/trailer1.mp4" type="video/mp4">
+                </video>
+                <!-- x3 -->
+                <iframe src="https://www.youtube.com/embed/ID_VIDEO"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="precios">
+        <div class="contenedor">
+            <h2>Precios</h2>
+            <input type="text" id="buscador" placeholder="Buscar juego..."> <!-- How To -->
+            <table id="tabla-precios">
+                <caption>Tabla de precios</caption>
+                <tr>
+                    <th>Juego</th>
+                    <th>Plataforma</th>
+                    <th>Género</th>
+                    <th>Precio</th>
+                    <th>Oferta</th>
+                </tr>
+                <tr>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                </tr>
+                <!-- 4 filas más -->
+            </table>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <div class="contenedor">
+            <h2>Contacto</h2>
+            <form action="#" method="post">
+                <legend>Escríbenos</legend>
+                <fieldset>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre">
+                    <label for="msg">Mensaje</label>
+                    <textarea id="msg" name="msg" rows="5"></textarea>
+                    <input type="submit" value="Enviar">
+                    <input type="reset" value="Borrar">
+                </fieldset>
+            </form>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d25397.437622260273!2d-1.8794891!3d37.2790217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1794406716389!5m2!1ses!2ses"
+                style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <img src="img/logos/logo-footer.png" alt="Logo footer" class="logo">
+        <p>&copy; 2026 PixelVault</p>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
+
 </html>
