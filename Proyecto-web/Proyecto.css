@@ -95,17 +95,7 @@ iframe {
     text-decoration: none;
 }
 
-#menu {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-#menu li {
-    display: inline;
-}
-
-#menu li a {
+#menu a {
     background: black;
     color: white;
     padding: 1rem 2rem;
@@ -114,7 +104,7 @@ iframe {
     transition: background .4s;
 }
 
-#menu li a:hover {
+#menu a:hover {
     background: #00e5ff;
     color: #000;
 }
@@ -238,12 +228,16 @@ table {
 
 caption {
     padding: 1rem;
+    font-size: 3rem;
+    text-shadow: .3rem .3rem .8rem #6c2bd9;
+    margin-bottom: 3rem;
 }
 
 td,
 th {
     border: .1rem solid white;
     padding: 1.5rem;
+    text-align: center;
 }
 
 th {
@@ -292,6 +286,11 @@ textarea:focus {
     border: 0;
 }
 
+/* section que envuelve el mapa: sin el relleno de las secciones principales */
+.seccion-mapa {
+    padding: 0;
+}
+
 /* ===== FOOTER ===== */
 footer {
     background: #000;
@@ -324,7 +323,7 @@ section {
 }
 
 @media (max-width: 992px) {
-    .grid-galeria {
+    .galeriaa {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
     }
@@ -344,11 +343,11 @@ section {
         gap: 1rem;
     }
 
-    #menu li {
+    #menu a {
         display: block;
     }
 
-    .grid-galeria {
+    .galeriaa {
         grid-template-columns: 1fr;
     }
 

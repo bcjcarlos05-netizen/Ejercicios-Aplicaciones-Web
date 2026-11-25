@@ -6,26 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PixelVault | Tienda de videojuegos</title>
     <link rel="icon" href="./Fotos/Favicon.png">
-   <link rel="stylesheet" href="./Proyecto.css">
+    <link rel="stylesheet" href="./Proyecto.css">
 </head>
 
 <body>
 
     <header id="inicio" class="cabecera">
         <a class="LogoYtitulo">
-        <p>PixelVault</p>
-        <img src="./Fotos/Foto1.png" alt="Logo PixelVault" class="logo">
+            <p>PixelVault</p>
+            <img src="./Fotos/Foto1.png" alt="Logo PixelVault" class="logo">
         </a>
-        <nav>
-            <ul id="menu">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#catalogo">Catálogo</a></li>
-                <li><a href="#galeria">Galería</a></li>
-                <li><a href="#precios">Precios</a></li>
-                <li><a href="#multimedia">Multimedia</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
+        <nav id="menu">
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#galeria">Galería</a>
+            <a href="#precios">Precios</a>
+            <a href="#multimedia">Multimedia</a>
+            <a href="#contacto">Contacto</a>
         </nav>
     </header>
 
@@ -106,7 +104,9 @@
                     <source src="./Video/Video1.mp4" type="video/mp4">
                 </video>
                 <!-- x3 -->
-                <iframe src="https://www.youtube.com/embed/ID_VIDEO"></iframe>
+                <iframe src="https://www.youtube.com/embed/N6f30RVHOVw?si=cANJzwMo5kUAwJ66" title="Trailer Gta 6"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -114,7 +114,6 @@
     <section id="precios">
         <div class="contenedor">
             <h2>Precios</h2>
-            <input type="text" id="buscador" placeholder="Buscar juego..."> <!-- How To -->
             <table id="tabla-precios">
                 <caption>Tabla de precios</caption>
                 <tr>
@@ -125,13 +124,33 @@
                     <th>Oferta</th>
                 </tr>
                 <tr>
-                    <td>...</td>
-                    <td>...</td>
-                    <td>...</td>
-                    <td>...</td>
-                    <td>...</td>
+                    <td>Grand Theft Auto 6</td>
+                    <td>PS5/XBOX Series X/S</td>
+                    <td>Mundo abierto</td>
+                    <td>69,99 €</td>
+                    <td>59,99 €</td>
                 </tr>
-                <!-- 4 filas más -->
+                <tr>
+                    <td>Call of Duty: Modern Warfare 4</td>
+                    <td>PS5/XBOX Series X/S</td>
+                    <td>FPS</td>
+                    <td>59,99 €</td>
+                    <td>29,99 €</td>
+                </tr>
+                <tr>
+                    <td>Minecraft</td>
+                    <td>PS5/PS4/Nintendo Switch</td>
+                    <td>Mundo abierto</td>
+                    <td>19,99 €</td>
+                    <td>9,99 €</td>
+                </tr>
+                <tr>
+                    <td>FC 27</td>
+                    <td>PC/PS4</td>
+                    <td>Fútbol</td>
+                    <td>99,99 €</td>
+                    <td>59,99 €</td>
+                </tr>
             </table>
         </div>
     </section>
@@ -150,10 +169,12 @@
                     <input type="reset" value="Borrar">
                 </fieldset>
             </form>
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d25397.437622260273!2d-1.8794891!3d37.2790217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1794406716389!5m2!1ses!2ses"
-                style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <section class="seccion-mapa">
+                <iframe class="mapa"
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d25397.437622260273!2d-1.8794891!3d37.2790217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1794406716389!5m2!1ses!2ses"
+                    style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </section>
         </div>
     </section>
 
