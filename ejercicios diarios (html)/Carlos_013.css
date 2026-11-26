@@ -1,0 +1,70 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+    background-image: linear-gradient(to right, #004433, #2e7d32, #81c784);
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 2rem;
+    line-height: 1.6;
+}
+
+.cabecera {
+    text-align: center;
+}
+
+.cabecera h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+
+.contenedor-principal {
+    width: 90%;
+    max-width: 110rem;
+    margin: 0 auto;
+}
+
+.carrusel {
+    display: flex;
+    height: 38rem;
+    width: 100%;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.4);
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.foto-carrusel {
+    width: 0;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: flex-grow 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
+}
+
+.foto-carrusel:hover {
+    flex-grow: 3;
+    opacity: 1;
+    filter: contrast(100%) brightness(1.1);
+}
+
+.foto-carrusel:first-child {
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+}
+
+.foto-carrusel:last-child {
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
