@@ -5,14 +5,13 @@
 }
 
 body {
-    /* Altura solicitada de 1600px */
+
     height: 1600px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-/* Header con fondo oscuro semitransparente para generar contraste, lo que genera la transparencia es la barra de la derecha */
 header {
     background-color: rgba(10, 25, 47, 0.9);
     padding: 25px 40px;
@@ -45,7 +44,6 @@ nav a:hover {
     color: #00d4ff;
 }
 
-/* Contenedor principal para las dos secciones */
 main {
     flex: 1;
     display: flex;
@@ -54,8 +52,6 @@ main {
     align-items: center;
     padding: 40px 20px;
 }
-
-/* Estilo de las dos secciones deportivas */
 section {
     width: 85%;
     max-width: 1000px;
@@ -90,7 +86,6 @@ section p {
     flex: 1;
 }
 
-/* Footer con alto contraste */
 footer {
     background-color: rgb(10, 25, 47, 0.95);
     text-align: center;
