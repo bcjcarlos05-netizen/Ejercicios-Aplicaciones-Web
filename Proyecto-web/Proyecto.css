@@ -28,7 +28,8 @@ body {
 
 /* cursor 2 */
 a,
-.boton {
+.boton,
+.accordion {
     cursor: url("../cursores/mano.png"), pointer;
 }
 
@@ -152,6 +153,10 @@ h1 {
     column-gap: 3rem;
 }
 
+.servicios{
+    font-size: 2rem;
+}
+
 p::first-letter {
     font-size: 150%;
     color: #00e5ff;
@@ -163,10 +168,6 @@ li:first-child {
 
 tr:nth-child(even) td {
     background: #222;
-}
-
-h2::before {
-    content: "🎮 ";
 }
 
 /* ===== CATÁLOGO ===== */
@@ -291,6 +292,72 @@ textarea:focus {
     padding: 0;
 }
 
+/* ===== ACORDEÓN (How To W3Schools) ===== */
+.acordeon {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+/* Botones que abren y cierran cada panel */
+.accordion {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1.8rem 2rem;
+    text-align: left;
+    font-family: inherit;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    background: #1e1e1e;
+    border: .1rem solid #333;
+    border-radius: 1rem;
+    outline: none;
+    box-shadow: .3rem .3rem .8rem #000;
+    transition: background .4s, border-color .4s;
+}
+
+/* Indicador + / − */
+.accordion::after {
+    content: "+";
+    float: right;
+    font-size: 2.4rem;
+    line-height: 1;
+    color: #00e5ff;
+}
+
+.accordion.active::after {
+    content: "−";
+    color: white;
+}
+
+/* Al pasar el ratón y cuando está abierto (clase .active añadida con JS) */
+.accordion:hover {
+    background: #2a2a2a;
+    border-color: #00e5ff;
+}
+
+.accordion.active {
+    background: #6c2bd9;
+    border-color: #00e5ff;
+    border-radius: 1rem 1rem 0 0;
+}
+
+/* Panel: oculto por defecto */
+.panel {
+    display: none;
+    overflow: hidden;
+    padding: 0 2rem;
+    background: #1e1e1e;
+    border: .1rem solid #333;
+    border-top: none;
+    border-radius: 0 0 1rem 1rem;
+}
+
+.panel p {
+    padding-top: 1.5rem;
+}
+
 /* ===== FOOTER ===== */
 footer {
     background: #000;
@@ -377,3 +444,4 @@ section {
         padding: 5rem 1.5rem;
     }
 }
+
